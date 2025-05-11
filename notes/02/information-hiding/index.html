@@ -589,8 +589,8 @@
 <h1 id="unit-02-information-hiding">Unit 02: Information Hiding</h1>
 <h2 id="abstraction-layer">Abstraction Layer</h2>
 <p>Building on Unit 1, another fundamental aspect of good object-oriented design is the concept of information hiding and maintaining the abstraction layer.</p>
-<p>In Python, fewer restrictions are enforced compared to other languages. While this flexibility can be powerful, it also means it's easier to accidentally (or even intentionally) bypass the abstraction layer. As a Python programmer, it's your responsibility to respect this boundary.</p>
-<p>Violating the abstraction layer often leads to a phenomenon known as "spaghetti code"-code that is so tangled and interdependent that even small changes can break your entire program.</p>
+<p>In Python, there are fewer restrictions are enforced compared to other languages like OOP focused language like Java. This means it's easier to accidentally (or even intentionally) bypass the abstraction layer when working with OOP code. Hence, it's your responsibility to respect and protect this boundary.</p>
+<p>Violating the abstraction layer often leads to a phenomenon known as "spaghetti code" - code that is so tangled and interdependent that even small changes can break your entire program.</p>
 <p><img alt="spaghetti code" src="../spaghetti.png" width="300" /></p>
 <hr />
 <h3 id="breaking-the-abstraction-layer-car-correctness">Breaking the Abstraction Layer: Car (Correctness)</h3>
@@ -656,7 +656,7 @@
 <p>Imagine trying to drive a car, only for someone else to randomly push it from the outside! Likewise, directly changing attributes can lead to unpredictable or buggy behavior.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Tell, Don’t Ask</p>
-<p>This example also breaks the "Tell, Don’t Ask" principle, another core object-oriented design guideline. Instead of telling objects what to do, you access their internal state and modify it yourself.</p>
+<p>This example also breaks the "Tell, Don’t Ask" principle, another core OOP principle which state that we should tell object to what to do instead of asking for information and doing it ourself. </p>
 <ul>
 <li>✅ Correct: <code>car.drive(10)</code> → You instruct the car itself to move.</li>
 <li>❌ Incorrect: <code>car.position = car.position + 10</code> → You ask for the car’s position and change it manually.</li>
