@@ -506,10 +506,10 @@
 
 
 <h1 id="unit-05-inheritance-and-subclasses">Unit 05: Inheritance and Subclasses</h1>
-<p>In unit 03, we have seen how we can create complex classes from other smaller classes with composition - modelling a 'has-a' relationship between classes. Now, we will be introducing how we can model 'is-a' relationships using inheritance!</p>
+<p>In Unit 03, we looked at how we can build complex classes using composition — that is, combining smaller classes together to model a has-a relationship. Now, we’ll look at how to model an is-a relationship between classes using inheritance!</p>
 <h2 id="square-rectangle">Square &amp; Rectangle</h2>
 <h3 id="creating-a-square">Creating a Square</h3>
-<p>Suppose now we would like to create a new class called <code>Square</code>. And we decide to implement it this way as:</p>
+<p>Suppose we want to create a new class called Square. We might start off implementing it like this:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -528,46 +528,47 @@
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code>    <span class="k">class</span> <span class="nc">Square</span><span class="p">:</span>
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">length</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">length</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Square</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">length</span>
 
-        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
 
-        <span class="k">def</span> <span class="nf">get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span>
+    <span class="k">def</span> <span class="nf">get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span>
 
-        <span class="k">def</span> <span class="nf">get_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+    <span class="k">def</span> <span class="nf">get_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
 
-        <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
 
-        <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>As you may have noticed, the code look exactly like our trusted <code>Rectangle</code> class from unit 01. If you think about it, a Square is really just a specialized Rectangle. </p>
-<p>In other words, a Square <strong>is a</strong> Rectangle. Which means we can utilize inheritance to create a subclass.</p>
+<p>Looks familiar, right? It’s basically the exact same code as our Rectangle class from Unit 01. That’s because a square is really just a special case of a rectangle — it’s a rectangle where the base and height are equal. So we can say that a Square is a Rectangle — it’s a subset of rectangles.</p>
+<p>In other words, a Square is-a Rectangle.</p>
+<p><img alt="venn diagrams of quadrilaterals" src="../quadrilaterals.png" /></p>
 <h3 id="inheriting-a-rectangle">Inheriting a Rectangle</h3>
-<p>So instead of rewriting our whole code for <code>Rectangle</code> Class as before for our <code>Square</code> class, we can just simply inherit (copy) it from our rectangle class as follow:</p>
+<p>Instead of rewriting all of Rectangle’s code in Square, we can use inheritance to reuse it:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">New Square</label><label for="__tabbed_1_2">Rectangle</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll">    <span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>                    <span class="c1"># Over here we tell python we want Square to inherit from the Rectangle class </span>
-</span>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-<span class="hll">            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>    <span class="c1"># super() mean the rectangle class, so what this line does it that is running the __init__ for the Rectangle class that Square inherited from.</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>                      <span class="c1"># This tells Python that Square inherits from Rectangle</span>
+</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+<span class="hll">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>      <span class="c1"># super() means &quot;call the parent class&quot;, so this runs Rectangle&#39;s __init__</span>
 </span>
-        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
 </code></pre></div></td></tr></table></div>
-That all, we are done! We will also have access to all the method rectangle in our new Square class.</p>
+<p>Just like that, we're done! Square now has access to all the methods in Rectangle, automatically.</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -589,12 +590,12 @@ That all, we are done! We will also have access to all the method rectangle in o
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">length</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">length</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">base</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rectangle with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rectangle with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> base and </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="si">}</span><span class="s2"> height&quot;</span>
 
     <span class="k">def</span> <span class="nf">get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span>
@@ -608,10 +609,113 @@ That all, we are done! We will also have access to all the method rectangle in o
     <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
+<p>Now we can say that Square is a subclass of Rectangle — or using the parent-child terminology, Square is the child and Rectangle is the parent.</p>
+<p>The class diagram for this looks like:</p>
+<p><img alt="class diagram for square" src="../square.png" /></p>
 </div>
 </div>
 </div>
-<p>Now we can say that a Square is a subclass of Rectangle. Or in parent-child relationship, Square is the child of Rectangle. The class diagram as follows:</p>
+<h2 id="method-overriding">Method Overriding</h2>
+<p>You might’ve noticed that we defined a <strong>str</strong> method again inside our Square class. That’s called method overriding.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>                    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>    
+
+<span class="hll">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class="hll">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>We are replacing the <strong>str</strong> method from Rectangle with a new version specific to Square.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Without <strong>str</strong> method</label><label for="__tabbed_2_2">With <strong>str</strong> method</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>If we didn’t define the <strong>str</strong> method in Square:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Then this code:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">sq</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sq</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Would give us:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Rectangle with 5 base and 5 height
+</code></pre></div></td></tr></table></div>
+<p>This happens because Square didn't define its own <strong>str</strong>, so it just uses the one it inherited from Rectangle.</p>
+</div>
+<div class="tabbed-block">
+<p>But if we do define <strong>str</strong> in Square:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>Then the same code:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">sq</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sq</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Will now give us:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Square with 5 length
+</code></pre></div></td></tr></table></div>
+<p>Here, we’ve overridden the <strong>str</strong> method from Rectangle with a new one tailored for Square.</p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Method Resolution Order (MRO)</p>
+<p>When you call a method on an object, Python doesn’t just guess — it follows a rule called the Method Resolution Order (MRO).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Python first checks the child class (like Square). If the method exists there, it uses it. If not, it &quot;moves up&quot; to the parent (like Rectangle) and checks there. If that parent had its own parent, Python would keep going up the chain.
+
+So in our case, Python sees that Square has a __str__ method, and uses it. If it didn’t, it would use the one from Rectangle.
+
+Note: Unlike other languages, python doesn’t care how many arguments the method takes — it only checks the method name. If a child and parent both have a method with the same name, the child’s version always takes priority.
+</code></pre></div></td></tr></table></div>
+</div>
+<h2 id="negative-example-when-not-to-use-inheritance">Negative example: When NOT to Use Inheritance</h2>
+<p>Inheritance tends to get overused. In practice, we seldom use inheritance. Let's look at some examples of how not to use inheritance, and why.</p>
+<p>You may come across examples online or in books that look like the following:</p>
+<p>class Point {
+  private double x;
+  private double y;
+    :
+}</p>
+<p>class Circle extends Point {
+  private double radius;
+    :
+}</p>
+<p>class Cylinder extends Circle {
+  private double height;
+    :
+}
+The difference between these implementations and the one you have seen in Unit 9 is that it uses inheritance rather than composition.</p>
+<p>Circle implemented like the above would have the center coordinate inherited from the parent (so it has three fields, x, y, and radius); Cylinder would have the fields corresponding to a circle, which is its base and height. In terms of modeling the properties of circle and cylinder, we have all the right properties in the right class.</p>
+<p>When we start to consider methods encapsulated with each object, things start to break down. Consider a piece of code written as follows:</p>
+<p>void foo(Circle c, Point p) {
+  if (c.contains(p)) {
+    // do something
+  }
+}
+Since Cylinder is a subtype of Point according to the implementation above, the code above should still work also if we replace Point with a Cylinder (according to the semantic of subtyping). But it gets weird -- what is the meaning of a Circle (in 2D) containing a Cylinder (in 3D)? We could come up with a convoluted meaning that explains this, but it is likely not what the original implementer of foo expects.</p>
+<p>The message here is this: Use composition to model a has-a relationship; inheritance for a is-a relationship. Make sure inheritance preserves the meaning of subtyping.</p>
 <p><a href="../../exercises/05/ex05.md">Jump to exercise 05</a></p>
 
 
