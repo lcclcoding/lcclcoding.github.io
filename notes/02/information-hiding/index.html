@@ -403,6 +403,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/class-field-method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Class Variables and Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -506,7 +529,30 @@
   
   
   <span class="md-ellipsis">
-    03. Vet
+    03. Circle with Coordinates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercises/04/ex04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Currency Converter
     
   </span>
   
@@ -541,22 +587,11 @@
 
 
 <h1 id="unit-02-information-hiding">Unit 02: Information Hiding</h1>
-<div class="admonition abstract">
-<p class="admonition-title">Learning Objectives</p>
-<p>After completing this unit, you should be able to:</p>
-<ul>
-<li>Explain the concept of abstraction and how it applies to object-oriented programming.</li>
-<li>Identify and avoid violations of the abstraction layer in Python code.</li>
-<li>Describe the risks of directly accessing or modifying object attributes.</li>
-<li>Refactor code to preserve the abstraction layer, improving maintainability and flexibility.</li>
-<li>Apply the "Tell, Don’t Ask" principle to design better class interactions.</li>
-</ul>
-</div>
 <h2 id="abstraction-layer">Abstraction Layer</h2>
-<p>Continuing from Unit 1, another key aspect of good object-oriented design is hiding away information and maintaining the abstraction layer. </p>
-<p>In Python, unlike some other languages, there are fewer enforced restrictions. This makes it easier to accidentally (or intentionally) bypass the abstraction layer - making it your responsibility as a programmer to not violate this principle.</p>
-<p>Breaking the abstraction layer often lead to a symptoms known as 'spaghetti' code where your code is so intertwined that changing a small part break your whole program.</p>
-<p><img alt="alt text" src="../spaghetti.png" width="300" /></p>
+<p>Building on Unit 1, another fundamental aspect of good object-oriented design is the concept of information hiding and maintaining the abstraction layer.</p>
+<p>In Python, fewer restrictions are enforced compared to other languages. While this flexibility can be powerful, it also means it's easier to accidentally (or even intentionally) bypass the abstraction layer. As a Python programmer, it's your responsibility to respect this boundary.</p>
+<p>Violating the abstraction layer often leads to a phenomenon known as "spaghetti code"-code that is so tangled and interdependent that even small changes can break your entire program.</p>
+<p><img alt="spaghetti code" src="../spaghetti.png" width="300" /></p>
 <hr />
 <h3 id="breaking-the-abstraction-layer-car-correctness">Breaking the Abstraction Layer: Car (Correctness)</h3>
 <p>To understand what it means to break an abstraction layer, let's consider the following <code>Car</code> class:</p>
@@ -578,7 +613,7 @@
     <span class="k">def</span> <span class="nf">drive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">+=</span> <span class="n">distance</span>
 </code></pre></div></td></tr></table></div>
-<p>This class models a simple car moving along a 1D road. The <code>drive()</code> method allows the car to move by a certain distance.</p>
+<p>This class model a simple car driving along a 1D road. You move the car by calling the <code>drive()</code> method, which updates its position by a given distance.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">✅ Correct Usage (Abstraction Maintained)</label><label for="__tabbed_1_2">❌ Broken Abstraction Layer</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -598,7 +633,7 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p>This is the proper way to use the <code>Car</code> class. We instruct the car to drive, and the internal logic handles the position update to the car instance.</p>
+<p>This is the proper way to use the <code>Car</code> class. We instruct the car to drive, and let the internal logic handles the position update to the car instance.</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -611,20 +646,20 @@
 <span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">car1</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">car1</span><span class="p">)</span>
-<span class="hll">    <span class="n">car1</span><span class="o">.</span><span class="n">position</span> <span class="o">+=</span> <span class="mi">10</span>
+<span class="hll">    <span class="n">car</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">position</span> <span class="o">+</span> <span class="mi">10</span>
 </span>    <span class="nb">print</span><span class="p">(</span><span class="n">car1</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p>As you may have noticed in Exercise 1, it's possible to directly modify a class's attributes. However, doing so breaks the abstraction layer. </p>
-<p>Instead of tell the car to <em>drive</em> like before, you’re essentially now stepping out of the car and <em>pushing</em> the car manually. Imagine trying to drive a car and being randomly pushed around (breaking the abstraction layer is a huge reason behind buggy code).</p>
+<p>Instead of tell the car to <em>drive</em> like before, you’re essentially now stepping out of the car and <em>pushing</em> the car manually</p>
+<p>Imagine trying to drive a car, only for someone else to randomly push it from the outside! Likewise, directly changing attributes can lead to unpredictable or buggy behavior.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Tell, Don’t Ask</p>
-<p>The broken example above also violates another fundamental object-oriented design principle: "Tell, Don’t Ask". This principle means that you should tell objects what to do instead of asking for their state and doing it yourself.</p>
+<p>This example also breaks the "Tell, Don’t Ask" principle, another core object-oriented design guideline. Instead of telling objects what to do, you access their internal state and modify it yourself.</p>
 <ul>
-<li>✅ Correct: car.drive(10) → You tell the car to move.</li>
-<li>❌ Incorrect: car.position += 10 → You ask for the car’s position and change it manually.</li>
+<li>✅ Correct: <code>car.drive(10)</code> → You instruct the car itself to move.</li>
+<li>❌ Incorrect: <code>car.position = car.position + 10</code> → You ask for the car’s position and change it manually.</li>
 </ul>
 </div>
 </div>
@@ -632,7 +667,7 @@
 </div>
 <hr />
 <h3 id="breaking-the-abstraction-layer-rectangle-maintainability">Breaking the Abstraction Layer: Rectangle (Maintainability)</h3>
-<p>Another reason to preserve the abstraction layer is that it makes your code much easier to maintain or refactor if you like to make change to it in the future. Let’s revisit the <code>Rectangle</code> class from Unit 01. </p>
+<p>Preserving the abstraction layer also makes your code easier to maintain and refactor if you like to make changes to it in the future. Let’s revisit the <code>Rectangle</code> class from Unit 01:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -653,7 +688,7 @@
     <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">2</span>
 </code></pre></div></td></tr></table></div>
-<p>Suppose we initially violated the abstraction layer to compute area and perimeter:</p>
+<p>Suppose you initially calculated area and perimeter by accessing the class fields directly:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Broken abstraction layer</label><label for="__tabbed_2_2">Original Code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -678,7 +713,7 @@
 </div>
 </div>
 </div>
-<p>Later on, you may decide to represent a rectangle using <code>base</code> and <code>area</code> instead of <code>height</code>. After all, you only need two of the three (base, height, area) to compute the third, making this redesign valid.</p>
+<p>Later, you might decide to represent a rectangle using its <code>base</code> and <code>area</code> instead of <code>height</code>. After all, only two of the three (base, height, area) are needed to compute the third, thus this redesign is a valid one.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">New Class</label><label for="__tabbed_3_2">Original Class</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -727,7 +762,7 @@
 </div>
 </div>
 </div>
-<p>However, making this redesign breaks your main program if you had broken the abstraction layer earlier on!</p>
+<p>If you previously accessed fields directly, your main program will break after this internal change:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Broken abstraction layer</label><label for="__tabbed_4_2">Original Code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -739,7 +774,7 @@
     <span class="n">area</span> <span class="o">=</span> <span class="n">rect1</span><span class="o">.</span><span class="n">base</span> <span class="o">*</span> <span class="n">rect1</span><span class="o">.</span><span class="n">height</span>                <span class="c1"># ❌ Broken</span>
     <span class="n">perimeter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">rect1</span><span class="o">.</span><span class="n">base</span> <span class="o">+</span> <span class="n">rect1</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>     <span class="c1"># ❌ Broken</span>
 </code></pre></div></td></tr></table></div>
-<p>The attributes <code>height</code> no longer exist, so those lines throw errors.</p>
+<p>The <code>height</code> attribute no longer exists, so these lines now cause errors.</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -750,7 +785,7 @@
     <span class="n">area</span> <span class="o">=</span> <span class="n">rect1</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>                             <span class="c1"># ✅ Still works</span>
     <span class="n">perimeter</span> <span class="o">=</span> <span class="n">rect1</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span>                   <span class="c1"># ✅ Still works</span>
 </code></pre></div></td></tr></table></div>
-<p>Whereas, sticking to the abstraction layers (calling <code>area()</code> and <code>perimeter()</code> instead of directly accessing fields), your program still works after internal changes to the class design!</p>
+<p>By using the class’s methods (the abstraction layer), your code continues to work even after the internal representation changes!</p>
 </div>
 </div>
 </div>
@@ -758,8 +793,8 @@
 <p class="admonition-title">Discussion</p>
 <p>Discussion questions (please discuss this with your teaching assistant!)</p>
 <ol>
-<li>What is the difference between accessing an attribute directly vs using a method?  Why might direct access lead to problems in larger programs?</li>
-<li>Consider the principle *“Tell, Don’t Ask.”: Why might this principle lead to better object-oriented code? </li>
+<li>What is the difference between accessing an attribute directly vs using a method? Why might direct access lead to problems in larger programs?</li>
+<li>Consider the principle <em>“Tell, Don’t Ask.”</em> Why might this lead to better object-oriented code?</li>
 <li>How does changing the internal implementation of a class (e.g., switching from height to area in <code>Rectangle</code>) illustrate the value of abstraction?</li>
 </ol>
 </div>

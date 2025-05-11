@@ -12,7 +12,7 @@
         <link rel="prev" href="../../02/information-hiding/">
       
       
-        <link rel="next" href="../../../exercises/01/ex01/">
+        <link rel="next" href="../../04/class-field-method/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -362,28 +362,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#car" class="md-nav__link">
+  <a href="#car-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Car
+      Car Example
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Car">
+    <nav class="md-nav" aria-label="Car Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#separate-class-for-engine-and-brake" class="md-nav__link">
+  <a href="#creating-separate-classes-for-engine-and-brake" class="md-nav__link">
     <span class="md-ellipsis">
-      Separate class for engine and brake
+      Creating Separate Classes for Engine and Brake
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#composition-of-engine-and-brake-for-the-car" class="md-nav__link">
+  <a href="#composing-engine-and-brake-in-car" class="md-nav__link">
     <span class="md-ellipsis">
-      Composition of engine and brake for the Car
+      Composing Engine and Brake in Car
     </span>
   </a>
   
@@ -410,12 +410,50 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Dangers of Composition: References / Aliasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/class-field-method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Class Variables and Methods
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -524,7 +562,30 @@
   
   
   <span class="md-ellipsis">
-    03. Vet
+    03. Circle with Coordinates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercises/04/ex04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Currency Converter
     
   </span>
   
@@ -559,15 +620,15 @@
 
 
 <h1 id="unit-03-composition">Unit 03: Composition</h1>
-<p>In Object-Oriented Programming (OOP), composition is a another key design principle where we objects constructed from other objects. </p>
-<h2 id="car">Car</h2>
-<p>To illustrate the concept of composition we will build on with the car example from unit 02.</p>
-<h3 id="separate-class-for-engine-and-brake">Separate class for engine and brake</h3>
-<p>As you all may know, each car <strong>has a</strong> engine system and <strong>has a</strong> brake system. Therefore, we can model these systems separately creating a class for each.</p>
+<p>In Object-Oriented Programming (OOP), <strong>composition</strong> is another fundamental design principle: objects can be constructed from other objects. This allows you to build complex systems flexibly, by combining simpler, well-defined components.</p>
+<h2 id="car-example">Car Example</h2>
+<p>Let’s build on our car example from Unit 02 to illustrate composition.</p>
+<h3 id="creating-separate-classes-for-engine-and-brake">Creating Separate Classes for Engine and Brake</h3>
+<p>A real car <strong>has an</strong> engine system and <strong>has a</strong> brake system. Instead of bundling these directly into the <code>Car</code>, we can create distinct classes for each. This enables modular design and reuse.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Engine</label><label for="__tabbed_1_2">Brake</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>The <code>Engine</code> class is a simple model of an engine that can be turned on/off and can calculate its acceleration based on how much you press the pedal.</p>
+<p>The <code>Engine</code> class models an engine that can be started or stopped, and calculates acceleration based on how much you press the pedal.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -606,17 +667,17 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_on</span>
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paddle_ratio</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">paddle_ratio</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span>  <span class="n">paddle_ratio</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Paddle ratio must be between 0 to 1&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">paddle_ratio</span>  <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Paddle ratio must be between 0 and 1.&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_running</span><span class="p">()</span> <span class="ow">and</span> <span class="n">paddle_ratio</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The engine cannot accelerate when it is stopped&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The engine cannot accelerate when it is stopped.&quot;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_acceleration</span> <span class="o">*</span> <span class="n">paddle_ratio</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p>The <code>Brake</code> class simulates a brake that gets worn the more you use it, and calculates braking force accordingly.</p>
+<p>The <code>Brake</code> class simulates how a brake gets worn down with use and calculates braking force accordingly.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -628,24 +689,26 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Brake</span><span class="p">:</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Brake</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_deceleration</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_deceleration</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_deceleration</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">max_deceleration</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wear</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>                   
 
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="n">paddle_ratio</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">paddle_ratio</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span>  <span class="n">paddle_ratio</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Paddle ratio must be between 0 to 1&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paddle_ratio</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paddle_ratio</span>  <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Paddle ratio must be between 0 and 1.&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">wear</span> <span class="o">+=</span> <span class="mf">0.00001</span> <span class="o">*</span> <span class="n">paddle_ratio</span>    
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_deceleration</span> <span class="o">*</span> <span class="n">paddle_ratio</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wear</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># return a negative acceleration</span>
+        <span class="c1"># Braking effect reduces as wear increases, and is always negative (slows the car)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_deceleration</span> <span class="o">*</span> <span class="n">paddle_ratio</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wear</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-<h3 id="composition-of-engine-and-brake-for-the-car">Composition of engine and brake for the Car</h3>
-<p>Using the brake and the engine to build our new <code>Car</code> class, we achieved the composition of classes as follows:</p>
+<h3 id="composing-engine-and-brake-in-car">Composing Engine and Brake in Car</h3>
+<p>By using the <code>Engine</code> and <code>Brake</code> objects inside the new <code>Car</code> class, we demonstrate <strong>composition</strong>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -690,8 +753,8 @@
     <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_accelerate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">acceleration</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># function name starting with an _method_name in python, typically denotes an internal (private) method that should not be called by outsiders </span>
-        <span class="c1"># Same formula you saw in exercise 02</span>
+    <span class="k">def</span> <span class="nf">_accelerate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">acceleration</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Internal method: should not be called directly from outside this class</span>
         <span class="n">dt</span> <span class="o">=</span> <span class="mf">1.0</span>
         <span class="n">v0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span>
         <span class="n">v1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">v0</span> <span class="o">+</span> <span class="n">acceleration</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -709,12 +772,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_accelerate</span><span class="p">(</span><span class="n">deceleration</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="class-diagram">Class Diagram</h3>
-<p>The class diagram for the <code>Car</code> class is as shown
-<img alt="alt text" src="../ClassDiagram.png" /></p>
-<p>The filled diamond arrow represent the <em>has-a</em> (compositional) relationship .</p>
+<p>The class diagram for the <code>Car</code> class looks like this:</p>
+<p><img alt="image" src="../ClassDiagram.png" /></p>
+<p>The diamond-shaped arrows represents a 'has-a' relationship between objects </p>
 <h2 id="dangers-of-composition-references-aliasing">Dangers of Composition: References / Aliasing</h2>
-<p>An possible danger of composition a is consequence of objects in python being reference type.  </p>
-<p>Consider the following example:</p>
+<p>A potential hazard of composition in Python is <strong>object aliasing</strong>-because objects are reference types.</p>
+<h3 id="example">Example</h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Example</label><label for="__tabbed_2_2">Answer: Part 1</label><label for="__tabbed_2_3">Answer: Part 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -752,26 +815,18 @@
 
     <span class="n">car2</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p>Before clicking on the answer, can you guess what will happen and why it happens? </p>
+<p>Study the above code. What do you expect to happen here and why? (<em>hint:</em> a line will throw an error) </p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="hll">    <span class="n">engine</span> <span class="o">=</span> <span class="n">Engine</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </span>    <span class="n">brake1</span> <span class="o">=</span> <span class="n">Brake</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">brake2</span> <span class="o">=</span> <span class="n">Brake</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
@@ -779,61 +834,28 @@
 <span class="hll">    <span class="n">car1</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">brake1</span><span class="p">)</span>
 </span><span class="hll">    <span class="n">car2</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">brake2</span><span class="p">)</span>
 </span>
-    <span class="n">car1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">car2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">car1</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-
-    <span class="n">car1</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-    <span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
-
-    <span class="n">car2</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<p>The above example, we only create one engine object which both cars will be using. </p>
-<p>In other words, both the cars are sharing the one engine.</p>
+<p>The above example, we only created one engine object which both object are referencing. In other words, both cars are sharing one engine.</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">engine</span> <span class="o">=</span> <span class="n">Engine</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">brake1</span> <span class="o">=</span> <span class="n">Brake</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">brake2</span> <span class="o">=</span> <span class="n">Brake</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
-
-    <span class="n">car1</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">brake1</span><span class="p">)</span>
-    <span class="n">car2</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">brake2</span><span class="p">)</span>
-
-    <span class="n">car1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">car2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">car1</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="hll">    <span class="n">car1</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</span><span class="hll">    <span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
-</span>
-    <span class="n">car2</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="o">...</span>
+    <span class="n">car1</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>          <span class="c1"># Stops the engine for BOTH car1 and car2</span>
+    <span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>      <span class="c1"># This will raise an Exception: &quot;The engine cannot accelerate when it is stopped&quot;</span>
+    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<p>Hence, in <code>line 14</code> when <code>car1</code> stopped its engine, <code>car2</code> engine is also stopped since is sharing the same engine object as <code>car1</code> resulting the error <code>The engine cannot accelerate when it is stopped</code> will appear when we run <code>line 15</code>.</p>
+<p>Thus, when <code>car1.stop()</code> is called, it shuts down the shared engine. So, even though you're calling <code>car2.drive(0.3)</code> next, the engine is already stopped-triggering an exception.</p>
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Key Takeaway</p>
-<p>The key takeaway here is that when we are dealing and passing object around, you need to be aware that you are <strong>NOT</strong> passing <em>copies</em> (unlike with primitive datatype like int/float/str) but the actual object itself. </p>
+<div class="admonition danger">
+<p class="admonition-title">Unintended side effects</p>
+<p>When you pass objects in Python, you are passing references to the actual objects and not creating copies (unlike with primitive types like <code>int</code>, <code>float</code>, or <code>str</code>). Always be mindful of this, especially when composing objects as sharing objects (aliasing) can have unintended side effects if not managed carefully!</p>
 </div>
 <p><a href="../../../exercises/03/ex03/">Jump to exercise 03</a></p>
 

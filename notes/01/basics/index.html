@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unit-01-basics-of-oop" class="md-skip">
+        <a href="#unit-01-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -328,7 +328,7 @@
           <li class="md-nav__item">
   <a href="#the-naive-approach" class="md-nav__link">
     <span class="md-ellipsis">
-      The naive approach
+      The Naive Approach
     </span>
   </a>
   
@@ -337,7 +337,7 @@
           <li class="md-nav__item">
   <a href="#the-oop-approach" class="md-nav__link">
     <span class="md-ellipsis">
-      The OOP approach
+      The OOP Approach
     </span>
   </a>
   
@@ -360,7 +360,7 @@
         <li class="md-nav__item">
   <a href="#class-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Class diagram
+      Class Diagram
     </span>
   </a>
   
@@ -411,6 +411,29 @@
   
   <span class="md-ellipsis">
     3. Composition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/class-field-method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Class Variables and Methods
     
   </span>
   
@@ -524,7 +547,30 @@
   
   
   <span class="md-ellipsis">
-    03. Vet
+    03. Circle with Coordinates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercises/04/ex04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Currency Converter
     
   </span>
   
@@ -558,23 +604,12 @@
 
 
 
-<h1 id="unit-01-basics-of-oop">Unit 01: Basics of OOP</h1>
-<div class="admonition abstract">
-<p class="admonition-title">Learning Objectives</p>
-<p>After completing this unit, you should be able to:</p>
-<ul>
-<li>Understand the concept of a <em>class</em> as a blueprint for creating objects</li>
-<li>Differentiate between a <em>class</em> and an <em>instance</em> of a class</li>
-<li>Use <em>abstraction</em> and <em>encapsulation</em> to hide internal implementation details</li>
-<li>Model real-world entities using classes with attributes and methods</li>
-<li>Write simple classes with constructors and instance methods</li>
-</ul>
-</div>
+<h1 id="unit-01-basics">Unit 01: Basics</h1>
 <h2 id="the-3-rectangles-problem">The 3 Rectangles Problem</h2>
-<p>Let us dive straight in with an example. Suppose we have 3 rectangles as shown in the figure below. We are tasked to find the area and perimeter for each rectangle.</p>
+<p>Let’s dive right in with an example. Suppose we have three rectangles as shown in the figure below. Our task is to find the area and perimeter of each rectangle.</p>
 <p><img alt="Image of 3 rectangle" src="../Rectangles.png" /></p>
-<h3 id="the-naive-approach">The naive approach</h3>
-<p>A naive approach to this problem is simply to store each rectangle as a tuple containing the base and height of a rectangle in list. To then compute the area and perimeter of each rectangle, we extract the base and height of the rectangle from each tuple and applying the following formulas for to find the area and perimeter:</p>
+<h3 id="the-naive-approach">The Naive Approach</h3>
+<p>A straightforward approach to this problem is to represent each rectangle as a tuple containing its base and height, and store these tuples in a list. To compute the area and perimeter of each rectangle, we extract the base and height from each tuple and apply the following formulas:</p>
 <ul>
 <li>Area = base × height</li>
 <li>Perimeter = 2 × (base + height)</li>
@@ -597,17 +632,17 @@
 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rectangle </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: Area = </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">, Perimeter = </span><span class="si">{</span><span class="n">perimeter</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="the-oop-approach">The OOP approach</h3>
-<p>Now in the OOP approach, we will utilize the power of OOP to make our problem simpler! </p>
+<h3 id="the-oop-approach">The OOP Approach</h3>
+<p>Now, let's see how using objects can simplify this problem!</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Step 1: Create</label><label for="__tabbed_1_2">Step 2: Ask</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Instead of using tuples, we create instances of the <code>Rectangle</code> class. </p>
+<p>Instead of using tuples, we create instances of a <code>Rectangle</code> class.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">rectangles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p>Rather than calculating area and perimeter manually, we will just simply ask each object directly for its area and perimeter!</p>
+<p>Rather than manually calculating the area and perimeter, we simply ask each object for its area and perimeter!</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -629,24 +664,25 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Key Takeaway</p>
-<p>Did you notice the difference? In the OOP approach, we don’t need to actually know the formulas to calculate the area and perimeter—this logic is hidden from us. This example illustrates a key principle of OOP: <strong>abstraction</strong> and <strong>encapsulation</strong>. The ultimate goal is to make our own lives easier when programming—especially as we begin writing more complex programs.</p>
-<p>In fact, you've already been using objects constantly. In Python, <em>almost everything is an object</em>. Perhaps the most familiar ones to you are string methods, like those that start with <code>is...</code>, such as <code>isalpha()</code> and <code>isdigit()</code>.</p>
-<p><em>Did you ever actually know how those methods are implemented under the hood?</em></p>
+<p>Notice the difference? In the OOP approach, we don’t need to know the formulas for area and perimeter - the logic for those are encapsulated within the object. This demonstrates two key principles of OOP: <strong>abstraction</strong> and <strong>encapsulation</strong>. </p>
+<p>Abstraction means hiding complex implementation details and exposing only what’s essential to the user. This makes code easier to read, maintain, and reuse, while reducing complexity as programs grow. Just as high-level languages abstract away machine code, OOP lets you focus on what objects do, not how they do it. This makes programming simpler and more manageable as you begin to write more complex code and programs.</p>
+<p>In fact, you’ve already been using objects all along. In Python, <em>almost everything</em> is an object. Perhaps the object you have used the most and is familiar to you are strings; strings are objects, and you likely have used methods like isalpha() and isdigit().</p>
+<p><em>Have you ever wondered how those methods are actually implemented under the hood? did you actually need to know how it works under the hood?</em></p>
 </div>
 <h2 id="creating-the-rectangle-class">Creating the <code>Rectangle</code> Class</h2>
-<p>So far we have only discussed how the rectangle class can be used, but how can we actually create it?</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step 1: Declaration</label><label for="__tabbed_2_2">Step 2: Attributes and Constructors</label><label for="__tabbed_2_3">Step 3: Method</label></div>
+<p>So far, we’ve only discussed how to use a <code>Rectangle</code> class, but how do we actually create one?</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step 1: Declaration</label><label for="__tabbed_2_2">Step 2: Attributes and Constructor</label><label for="__tabbed_2_3">Step 3: Methods</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>We will start off by declaring the class which we are looking to create. </p>
+<p>We start by declaring the class we want to create.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p>Next we use the special <strong>init</strong> function to define a constructor. A constructor is automatically called when a new instance of a class is created. This is where we can set up the initial state of the object by assigning values to its <em>attributes</em>.</p>
-<p>Attributes are variables that belong to an object. They help describe the characteristics or properties of the object. In our rectangle example, we need to know how tall and how wide it is, thus we can give it two attributes: base and height.</p>
+<p>Next, we define a special method called <code>__init__</code>, known as the constructor. The constructor is automatically called when a new instance of the class is created. Here, we set up the initial state of the object by assigning values to its <em>attributes</em>.</p>
+<p>Attributes are variables that belong to an object and describe its properties. For a rectangle, we need its base and height, so we give it two attributes: <code>base</code> and <code>height</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -654,20 +690,20 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>   <span class="c1"># self: refer to the instance of the object that was just created</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>                <span class="c1"># self.base = base saves the value inside the current instance so that we can use it later</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>   <span class="c1"># self refers to the instance being created</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>                <span class="c1"># Save the base value in the instance</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Creating a rect instance: this is something like calling Rectangle.__init__(10,5)</span>
+    <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># Creating a rectangle instance: this internally calls Rectangle.__init__(10, 5)</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition tip">
-<p class="admonition-title">Class vs instance</p>
-<p>When we declare a class, we are creating the template of HOW to make the object. When we talk about instance, we are dealing with the real object itself</p>
+<p class="admonition-title">Class vs Instance</p>
+<p>Declaring a class defines the blueprint for creating objects. An instance is an actual object created from that blueprint.</p>
 </div>
 </div>
 <div class="tabbed-block">
-<p>Finally, we will implement required method that give use the behaviors that we want from our object. </p>
+<p>Finally, we implement the methods that provide the desired behaviors for our object.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -683,42 +719,41 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>   <span class="c1"># self: refer to the instance of the object that was just created</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>                <span class="c1"># self.base = base saves the value inside the current instance so that we can use it later</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
 
     <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
 
     <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>     <span class="c1"># Creating a rect instance: this is something like calling Rectangle.__init__(10,5)</span>
+    <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
     <span class="n">rect1</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>                <span class="c1"># returns 50</span>
     <span class="n">rect1</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span>           <span class="c1"># returns 30</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-<h2 id="class-diagram">Class diagram</h2>
-<p>Often to help us visualize classes, we create something known as a class diagram. A class diagram is a concise visualization of all the attributes and method that class may have. </p>
-<p>The class diagram for <code>Rectangle</code> is shown:</p>
+<h2 id="class-diagram">Class Diagram</h2>
+<p>To help visualize classes, we often use a class diagram. A class diagram provides a concise overview of all the attributes and methods a class contains.</p>
 <p><img alt="Class diagram for rectangle" src="../RectangleClass.png" width="300" /></p>
-<p>Explanation:</p>
+<p>In the diagram above is the class diagram for <code>Rectangle</code>. It typically consists of 2 rows where:</p>
 <ul>
-<li>The first row contains attribute its respective datatype</li>
-<li>The second row contains it methods signature and its return type</li>
+<li>The first row lists the attributes and their data types.</li>
+<li>The second row lists the method signatures and their return types.</li>
 </ul>
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
-<p>Discussion questions (please discuss this with you teaching assistant!)</p>
+<p>Discussion questions (please discuss these with your teacher!):</p>
 <ol>
 <li>
 <p>What is the difference between a class and an instance of a class?</p>
 </li>
 <li>
-<p>What does it mean to say that a class abstracts something? and why do we want to abstract code?</p>
+<p>What does it mean to say that a class abstracts something, and why is abstraction useful in programming?</p>
 </li>
 <li>
 <p>What does the <code>self</code> keyword refer to?</p>

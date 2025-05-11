@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../../../notes/04/class-field-method/">
-      
-      
-        <link rel="next" href="../../02/ex02/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>01. Circles - PY2 OOP</title>
+        <title>Unit 05: Inheritance and Subclasses - PY2 OOP</title>
       
     
     
@@ -70,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-1-circles" class="md-skip">
+        <a href="#unit-05-inheritance-and-subclasses" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              01. Circles
+              Unit 05: Inheritance and Subclasses
             
           </span>
         </div>
@@ -264,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/01/basics/" class="md-nav__link">
+      <a href="../../01/basics/" class="md-nav__link">
         
   
   
@@ -287,7 +283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/02/information-hiding/" class="md-nav__link">
+      <a href="../../02/information-hiding/" class="md-nav__link">
         
   
   
@@ -310,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/03/composition/" class="md-nav__link">
+      <a href="../../03/composition/" class="md-nav__link">
         
   
   
@@ -333,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/04/class-field-method/" class="md-nav__link">
+      <a href="../../04/class-field-method/" class="md-nav__link">
         
   
   
@@ -360,20 +356,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -389,7 +383,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Exercises
@@ -400,32 +394,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    01. Circles
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../exercises/01/ex01/" class="md-nav__link">
         
   
   
@@ -436,35 +408,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#brief" class="md-nav__link">
-    <span class="md-ellipsis">
-      Brief
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -477,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02/ex02/" class="md-nav__link">
+      <a href="../../../exercises/02/ex02/" class="md-nav__link">
         
   
   
@@ -500,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03/ex03/" class="md-nav__link">
+      <a href="../../../exercises/03/ex03/" class="md-nav__link">
         
   
   
@@ -523,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04/ex04/" class="md-nav__link">
+      <a href="../../../exercises/04/ex04/" class="md-nav__link">
         
   
   
@@ -562,34 +505,114 @@
 
 
 
-<h1 id="exercise-1-circles">Exercise 1: Circles</h1>
-<p>In this exercise, you’ll create your first class in Python!</p>
-<h2 id="brief">Brief</h2>
-<p>Suppose you have three circles with radii of 5, 10, and 20, respectively. Model these circles as objects so that you can easily determine each circle’s radius, diameter, area, and perimeter.</p>
-<p><img alt="3 circles with radius of 5, 10, 20" src="../circles.png" /></p>
-<h1 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h1>
-<p>Begin by accepting the assignment from GitHub. </p>
-<hr />
-<h2 id="task-1-create-a-class-diagram">Task 1: Create a Class Diagram</h2>
-<p>Before you start coding, open the <code>classes.drawio</code> file at <a href="https://draw.io/">draw.io</a> or install the ‘Draw.io Integration’ extension for VS Code. Complete the class diagram by specifying the attributes and methods you plan to implement.</p>
-<div class="admonition warning">
-<p class="admonition-title">Checkpoint: Correct diagram</p>
-<p>Please confirm your class diagram with your teacher before proceeding to task 3.</p>
+<h1 id="unit-05-inheritance-and-subclasses">Unit 05: Inheritance and Subclasses</h1>
+<p>In unit 03, we have seen how we can create complex classes from other smaller classes with composition - modelling a 'has-a' relationship between classes. Now, we will be introducing how we can model 'is-a' relationships using inheritance!</p>
+<h2 id="square-rectangle">Square &amp; Rectangle</h2>
+<h3 id="creating-a-square">Creating a Square</h3>
+<p>Suppose now we would like to create a new class called <code>Square</code>. And we decide to implement it this way as:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code>    <span class="k">class</span> <span class="nc">Square</span><span class="p">:</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">length</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">length</span>
+
+        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
+
+        <span class="k">def</span> <span class="nf">get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span>
+
+        <span class="k">def</span> <span class="nf">get_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+
+        <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+
+        <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>As you may have noticed, the code look exactly like our trusted <code>Rectangle</code> class from unit 01. If you think about it, a Square is really just a specialized Rectangle. </p>
+<p>In other words, a Square <strong>is a</strong> Rectangle. Which means we can utilize inheritance to create a subclass.</p>
+<h3 id="inheriting-a-rectangle">Inheriting a Rectangle</h3>
+<p>So instead of rewriting our whole code for <code>Rectangle</code> Class as before for our <code>Square</code> class, we can just simply inherit (copy) it from our rectangle class as follow:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">New Square</label><label for="__tabbed_1_2">Rectangle</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll">    <span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>                    <span class="c1"># Over here we tell python we want Square to inherit from the Rectangle class </span>
+</span>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+<span class="hll">            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>    <span class="c1"># super() mean the rectangle class, so what this line does it that is running the __init__ for the Rectangle class that Square inherited from.</span>
+</span>
+        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
+</code></pre></div></td></tr></table></div>
+That all, we are done! We will also have access to all the method rectangle in our new Square class.</p>
 </div>
-<hr />
-<h2 id="task-2-implement-the-class">Task 2: Implement the Class</h2>
-<p>Using your class diagram as a guide, implement the <code>Circle</code> class in Python.</p>
-<hr />
-<h2 id="task-3-implement-the-__str__-method">Task 3: Implement the <code>__str__</code> Method</h2>
-<p>Try printing an instance of your <code>Circle</code> object. You’ll likely see something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;__main__.Circle object at 0x000001E558684410&gt;
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">length</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rectangle with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span>
+
+    <span class="k">def</span> <span class="nf">get_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>This default output isn’t informative, as it only displays the object’s memory address.</p>
-<p>Fortunately, Python provides a special method called <code>__str__</code>, which lets you customize how your object is displayed when printed.</p>
-<p><strong>Your task:</strong><br />
-Modify your <code>Circle</code> class by implementing the <code>__str__</code> method so that printing a circle displays something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Circle with radius 5.00; diameter 10.00; area 78.54 
-</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Now we can say that a Square is a subclass of Rectangle. Or in parent-child relationship, Square is the child of Rectangle. The class diagram as follows:</p>
+<p><a href="../../exercises/05/ex05.md">Jump to exercise 05</a></p>
 
 
 

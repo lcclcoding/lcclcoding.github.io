@@ -12,13 +12,15 @@
         <link rel="prev" href="../../02/ex02/">
       
       
+        <link rel="next" href="../../04/ex04/">
+      
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>03. Vet - PY2 OOP</title>
+        <title>03. Circle with Coordinates - PY2 OOP</title>
       
     
     
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-3-records" class="md-skip">
+        <a href="#exercise-3-circle-with-coordinates" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              03. Vet
+              03. Circle with Coordinates
             
           </span>
         </div>
@@ -324,6 +326,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/04/class-field-method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Class Variables and Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -438,7 +463,7 @@
   
   
   <span class="md-ellipsis">
-    03. Vet
+    03. Circle with Coordinates
     
   </span>
   
@@ -451,7 +476,7 @@
   
   
   <span class="md-ellipsis">
-    03. Vet
+    03. Circle with Coordinates
     
   </span>
   
@@ -483,36 +508,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-0-accept" class="md-nav__link">
+  <a href="#task-0-accept-the-assignment" class="md-nav__link">
     <span class="md-ellipsis">
-      Task 0: Accept
+      Task 0: Accept the Assignment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-1-exploring-primitive-vs-reference-type" class="md-nav__link">
+  <a href="#task-1-primitive-vs-reference-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Task 1: Exploring Primitive vs Reference Type
+      Task 1: Primitive vs Reference Types
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-2-design-your-class" class="md-nav__link">
+  <a href="#task-2-point-class" class="md-nav__link">
     <span class="md-ellipsis">
-      Task 2: Design your class
+      Task 2: Point Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 2: Point Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#__eq__-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      __eq__ method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#task-3-implement" class="md-nav__link">
+  <a href="#task-3-design-the-circle-class-using-composition" class="md-nav__link">
     <span class="md-ellipsis">
-      Task 3: Implement
+      Task 3: Design the Circle Class Using Composition
     </span>
   </a>
   
@@ -522,6 +571,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/ex04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Currency Converter
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -550,79 +622,69 @@
 
 
 
-<h1 id="exercise-3-records">Exercise 3: Records</h1>
+<h1 id="exercise-3-circle-with-coordinates">Exercise 3: Circle with Coordinates</h1>
+<p>This exercise will help you understand <strong>composition</strong> in object-oriented programming by modeling geometric objects in a 2D Cartesian plane. Specifically, we will be focusing on the <code>Circle</code> class from exercise 01. </p>
+<p>You will also explore how Python handles <strong>primitive</strong> and <strong>reference types</strong> and some things to take note of.</p>
+<hr />
 <h2 id="brief">Brief</h2>
-<p>For the past 20 years, the Pallet Town Veterinary Clinic has managed patient records using traditional pen-and-paper methods. As a result, the clinic’s walls are now lined with stacks of folders with medical records all over the place. Although the clinic prides itself on its personalized service and dedicated staff, the ever-increasing volume of patient records has made it challenging to track information, follow up with pet owners, and deliver timely treatments.</p>
-<p>To modernize their operations and improve patient care, the clinic is now transitioning to a digital record system. You are tasked to to design and implement a digital records system for Pallet Town Veterinary Clinic with the following requirements: </p>
-<p>Each patient (i.e., a pet) record must store the following:</p>
+<p>Previously, you learned how to model a simple shape like a <code>Circle</code> using classes. Now, you will extend this circle and place it in 2D Cartesian (x-y) plane. This means each shape must also keep track of its position in the x-y plane. </p>
+<p><img alt="Image" src="../circle.png" />
+Above is an image of a circle with the circle point (0,0) and a radius of 10. </p>
+<hr />
+<h2 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h2>
+<p>Accept the assignment using the provided GitHub Classroom link.</p>
+<hr />
+<h2 id="task-1-primitive-vs-reference-types">Task 1: Primitive vs Reference Types</h2>
+<p>Open the file <code>task1.py</code> and write a short code example that demonstrates how Python handles:</p>
 <ul>
-<li>Pet Information: name, species, and breed</li>
-<li>Owner Contact Information: name, phone number, and email address</li>
-<li>Medical Record: list of treatments, vaccination history, and date of last visit</li>
+<li>Primitive types (e.g., <code>int</code>, <code>float</code>)</li>
+<li>Reference types (e.g., <code>list</code>, <code>dict</code>, or your own class)</li>
 </ul>
-<p>Additionally, the clinic must be able to:</p>
+<p>Implement functions that show how assignment and modification affect the original variables for both primitive and reference types.</p>
+<hr />
+<h2 id="task-2-point-class">Task 2: <code>Point</code> Class</h2>
+<p>Rather than keeping track of x,y coordinate individually with our shapes using attribute for each shape, we will create a dedicated <code>Point</code> class that encapsulate the coordinate and the related logic for us.</p>
+<h3 id="design">Design</h3>
+<p>Thus, we will begin by creating a <code>Point</code> class with these specifications:</p>
+<p><strong>Attributes</strong>:</p>
 <ul>
-<li>Update any part of a patient's record (e.g., owner contact details, new treatments, etc.)</li>
-<li>Get a list of pets that have not visited the clinic in a long time for be able to send send check-up reminder.</li>
+<li><code>x</code> (float): The x-coordinate.</li>
+<li><code>y</code> (float): The y-coordinate.</li>
 </ul>
-<p>You will design and implement this system using composition, where complex objects (like a patient) are made up of smaller, dedicated objects.</p>
-<h2 id="task-0-accept">Task 0: Accept</h2>
-<p>Accept the assignment from github using this <a href="">link</a> </p>
-<h2 id="task-1-exploring-primitive-vs-reference-type">Task 1: Exploring Primitive vs Reference Type</h2>
-<h2 id="task-2-design-your-class">Task 2: Design your class</h2>
-<p>Open the Circle.drawio file at <a href="https://draw.io/">draw.io</a> or using 'Draw.io Integration' extension on vscode and fill in the class diagram containing the attribute and method that you will be implementing.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip: Nouns and Verbs</p>
-<p><em>hint</em> <em>hint</em> take notes of the nouns and verbs in the brief. </p>
-</div>
-<h2 id="task-3-implement">Task 3: Implement</h2>
-<div class="admonition warning">
-<p class="admonition-title">Checkpoint: Correct diagram</p>
-<p>Please confirm your diagram with your teacher before staring on Task 3.</p>
-<div class="admonition note">
-<p class="admonition-title">Class Design</p>
-<p>Do take note that there is not 'correct' a design to this problem. So long that your design is reasonable and you are able to justify it, your design will be accepted.</p>
-</div>
-</div>
-<p>A Sample Patient Record is given below:<br />
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code>Pet Information:
-    Name: Carrot
-    Species: Dog
-    Breed: Golden Retriever
+<p><strong>Methods</strong>:</p>
+<ul>
+<li><code>distance_to(other)</code>: Returns the Euclidean distance between this point and another <code>Point</code> object.</li>
+<li><code>__str__</code>: Returns a string representation in the format <code>(x, y)</code>.</li>
+</ul>
+<h3 id="__eq__-method"><code>__eq__</code> method</h3>
+<p>Before you continue, explore the following code:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 
-Owner Information:
-    Name: John doe
-    Phone: 91234567
-    Email: john.doe@example.com
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Even though both p1 and p2 at at (0,0), the output of this code will be false! </p>
+<p>By default if you do not implement the <code>__eq__</code> method in python, python will compare whether the object are the same if they have same reference (location in memory). Since, p1 &amp; p2 has different reference (as they are 2 separate object located in different area of the memory) it return false. </p>
+<p>While, something like
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span>
 
-Medical Record:
-    Treatments:
-        - (&quot;Deworming&quot;, &quot;2023-02-10&quot;)
-        - (&quot;X-ray for hind leg&quot;, &quot;2024-01-12&quot;)
-
-    Vaccinations:
-        - (&quot;Rabies&quot;, &quot;2023-02-10&quot;)
-
-    Last Visit: 2024-01-12
-</code></pre></div></td></tr></table></div></p>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+will return true.</p>
+<p>Your task: Implement the <code>__eq__</code> method such that we can compare the <code>Point</code> objects using the == operator. </p>
+<hr />
+<h2 id="task-3-design-the-circle-class-using-composition">Task 3: Design the <code>Circle</code> Class Using Composition</h2>
+<p>Redesign your <code>Circle</code> class from Exercise 1 to utilize <strong>composition</strong> by including a <code>Point</code> object as its center. </p>
+<p>Implement another a method such we are able to find the distance between 2 circle. Raise a ValueError if the object is not a circle (<em>hint: use <code>isinstance(...) function</code></em>)</p>
+<p><img alt="alt text" src="../circle-distance.png" /></p>
+<p>Note: If the circle is overlapping you should return zero. </p>
 
 
 
