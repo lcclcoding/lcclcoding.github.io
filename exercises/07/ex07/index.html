@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../../notes/07/abstract/">
+        <link rel="prev" href="../../06/ex06/">
       
-      
-        <link rel="next" href="../../02/ex02/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>01. Circles - PY2 OOP</title>
+        <title>07. Birds of a Feather 2 - PY2 OOP</title>
       
     
     
@@ -70,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-1-circles" class="md-skip">
+        <a href="#exercise-7-birds-of-a-feather-2" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              01. Circles
+              07. Birds of a Feather 2
             
           </span>
         </div>
@@ -469,32 +467,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    01. Circles
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../01/ex01/" class="md-nav__link">
         
   
   
@@ -505,35 +481,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#brief" class="md-nav__link">
-    <span class="md-ellipsis">
-      Brief
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -658,10 +605,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../07/ex07/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    07. Birds of a Feather 2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -672,6 +641,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#brief" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brief
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-0-accept-the-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 0: Accept the Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-update-the-class-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 1: Update the Class Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2-refactor-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 2: Refactor the Code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -700,32 +725,35 @@
 
 
 
-<h1 id="exercise-1-circles">Exercise 1: Circles</h1>
-<p>In this exercise, you’ll create your first class in Python!</p>
+<h1 id="exercise-7-birds-of-a-feather-2">Exercise 7: Birds of a Feather 2</h1>
 <h2 id="brief">Brief</h2>
-<p>Suppose you have three circles with radii of 5, 10, and 20, respectively. Model these circles as objects so that you can easily determine each circle’s radius, diameter, area, and perimeter.</p>
-<p><img alt="3 circles with radius of 5, 10, 20" src="../circles.png" /></p>
-<h1 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h1>
-<p>Begin by accepting the assignment from GitHub. </p>
+<p>In Exercise 5, we implemented some bird such as <code>Parrot</code> and <code>Penguin</code>.  However, also in exercise 5, some of the classes should not directly be initialized and thus should be an abstract class. Your task is to determine which class should be abstract.</p>
+<p>You will be provided with the suggested solution to Exercise 5 as a starting point.</p>
 <hr />
-<h2 id="task-1-create-a-class-diagram">Task 1: Create a Class Diagram</h2>
-<p>Before you start coding, open the <code>classes.drawio</code> file at <a href="https://draw.io/">draw.io</a> or install the ‘Draw.io Integration’ extension for VS Code. Complete the class diagram by specifying the attributes and methods you plan to implement.</p>
+<h2 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h2>
+<p>Accept the assignment using the GitHub Classroom link provided.</p>
+<hr />
+<h2 id="task-1-update-the-class-diagram">Task 1: Update the Class Diagram</h2>
+<p>Implement the an abstract method <code>demo</code> that will be available in all type bird. It should demonstrate all the abilities of the bird.</p>
+<ol>
+<li>Open the <code>class.drawio</code> file using <a href="https://draw.io/">draw.io</a> or the "Draw.io Integration" extension in VS Code.</li>
+<li>Update the class diagram:</li>
+<li>Identify which classes should be <strong>abstract</strong>.</li>
+<li>Clearly mark abstract classes and abstract methods in the diagram (by ltalicize the class name &amp; method)</li>
+</ol>
+<p><img alt="example" src="../abstract.png" width="300" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Checkpoint: Correct diagram</p>
-<p>Please confirm your class diagram with your teacher before proceeding to task 3.</p>
 </div>
+<p>Please confirm your class diagram with your teacher before proceeding to task 3.</p>
 <hr />
-<h2 id="task-2-implement-the-class">Task 2: Implement the Class</h2>
-<p>Using your class diagram as a guide, implement the <code>Circle</code> class in Python.</p>
-<hr />
-<h2 id="task-3-implement-the-__str__-method">Task 3: Implement the <code>__str__</code> Method</h2>
-<p>Try printing an instance of your <code>Circle</code> object. You’ll likely see something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;__main__.Circle object at 0x000001E558684410&gt;
-</code></pre></div></td></tr></table></div>
-<p>This default output isn’t informative, as it only displays the object’s memory address. Fortunately, Python provides a special method called <code>__str__</code>, which lets you customize how your object is displayed when printed.</p>
-<p>Modify your <code>Circle</code> class by implementing the <code>__str__</code> method so that printing a circle displays something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Circle with radius 5.00; diameter 10.00; area 78.54 
-</code></pre></div></td></tr></table></div>
+<h2 id="task-2-refactor-the-code">Task 2: Refactor the Code</h2>
+<p>Refactor the provided code to use abstract classes:</p>
+<ul>
+<li>Use Python’s <code>abc</code> module to define abstract base classes and abstract methods.</li>
+<li>Ensure that all subclasses correctly implement the required abstract methods.</li>
+<li>The zoo should now utilize the <code>demo</code> method.</li>
+</ul>
 
 
 

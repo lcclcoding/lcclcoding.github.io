@@ -20,7 +20,7 @@
     
     
       
-        <title>1. Basics - PY2 OOP</title>
+        <title>01. Basics - PY2 OOP</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Basics
+              01. Basics
             
           </span>
         </div>
@@ -280,7 +280,7 @@
   
   
   <span class="md-ellipsis">
-    1. Basics
+    01. Basics
     
   </span>
   
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    1. Basics
+    01. Basics
     
   </span>
   
@@ -387,7 +387,7 @@
   
   
   <span class="md-ellipsis">
-    2. Information Hiding
+    02. Information Hiding
     
   </span>
   
@@ -410,7 +410,7 @@
   
   
   <span class="md-ellipsis">
-    3. Composition
+    03. Composition
     
   </span>
   
@@ -433,7 +433,76 @@
   
   
   <span class="md-ellipsis">
-    4. Class Variables and Methods
+    04. Class Variables and Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05/subclasses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Inheritance and Subclasses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06/overloading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07/abstract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Abstract Classes
     
   </span>
   
@@ -581,6 +650,75 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercises/05/ex05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Birds of a Feather
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercises/06/ex06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Messenger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercises/07/ex07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Birds of a Feather 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -606,7 +744,7 @@
 
 <h1 id="unit-01-basics">Unit 01: Basics</h1>
 <h2 id="the-3-rectangles-problem">The 3 Rectangles Problem</h2>
-<p>Let’s dive right in with an example. Suppose we have three rectangles as shown in the figure below. Our task is to find the area and perimeter of each rectangle.</p>
+<p>Let’s dive right in with an example. Suppose we have three rectangles as shown in the figure below and we would like to find the area and perimeter of each rectangle.</p>
 <p><img alt="Image of 3 rectangle" src="../Rectangles.png" /></p>
 <h3 id="the-naive-approach">The Naive Approach</h3>
 <p>A straightforward approach to this problem is to represent each rectangle as a tuple containing its base and height, and store these tuples in a list. To compute the area and perimeter of each rectangle, we extract the base and height from each tuple and apply the following formulas:</p>
@@ -664,10 +802,10 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Key Takeaway</p>
-<p>Notice the difference? In the OOP approach, we don’t need to know the formulas for area and perimeter - the logic for those are encapsulated within the object. This demonstrates two key principles of OOP: <strong>abstraction</strong> and <strong>encapsulation</strong>. </p>
-<p>Abstraction means hiding complex implementation details and exposing only what’s essential to the user. This makes code easier to read, maintain, and reuse, while reducing complexity as programs grow. Just as high-level languages abstract away machine code, OOP lets you focus on what objects do, not how they do it. This makes programming simpler and more manageable as you begin to write more complex code and programs.</p>
-<p>In fact, you’ve already been using objects all along. In Python, <em>almost everything</em> is an object. Perhaps the object you have used the most and is familiar to you are strings; strings are objects, and you likely have used methods like isalpha() and isdigit().</p>
-<p><em>Have you ever wondered how those methods are actually implemented under the hood? did you actually need to know how it works under the hood?</em></p>
+<p>Notice the difference? In the OOP approach, we don’t need to know the formulas for area and perimeter - the logic for those are <em>encapsulated</em> within the object. This demonstrates two key principles of OOP: abstraction and encapsulation. </p>
+<p>Abstraction means hiding complex implementation details and exposing only what’s essential to the user. This makes code easier to read, maintain, and reuse, while reducing complexity as programs grow. Just as high-level languages abstract away machine code, OOP lets you focus on <em>what</em> objects do, not <em>how</em> they do it.</p>
+<p>In fact, you’ve already been using objects all along. In Python, <em>almost everything</em> is an object. Perhaps the object you have used the most and is familiar to you are strings; python strings are objects, and you likely have used methods the string object methods like isalpha(), isdigit() and so on. </p>
+<p><em>Have you ever wondered how those methods are actually implemented under the hood? Did you actually need to know how it works under the hood?</em></p>
 </div>
 <h2 id="creating-the-rectangle-class">Creating the <code>Rectangle</code> Class</h2>
 <p>So far, we’ve only discussed how to use a <code>Rectangle</code> class, but how do we actually create one?</p>

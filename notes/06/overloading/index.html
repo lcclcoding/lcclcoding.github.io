@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../../notes/07/abstract/">
+        <link rel="prev" href="../../05/subclasses/">
       
       
-        <link rel="next" href="../../02/ex02/">
+        <link rel="next" href="../../07/abstract/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>01. Circles - PY2 OOP</title>
+        <title>06. Overloading - PY2 OOP</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-1-circles" class="md-skip">
+        <a href="#unit-06-overloading" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              01. Circles
+              06. Overloading
             
           </span>
         </div>
@@ -223,18 +223,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -250,7 +252,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -264,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/01/basics/" class="md-nav__link">
+      <a href="../../01/basics/" class="md-nav__link">
         
   
   
@@ -287,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/02/information-hiding/" class="md-nav__link">
+      <a href="../../02/information-hiding/" class="md-nav__link">
         
   
   
@@ -310,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/03/composition/" class="md-nav__link">
+      <a href="../../03/composition/" class="md-nav__link">
         
   
   
@@ -333,7 +335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/04/class-field-method/" class="md-nav__link">
+      <a href="../../04/class-field-method/" class="md-nav__link">
         
   
   
@@ -356,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/05/subclasses/" class="md-nav__link">
+      <a href="../../05/subclasses/" class="md-nav__link">
         
   
   
@@ -376,10 +378,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../notes/06/overloading/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    06. Overloading
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -390,6 +414,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-overloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Overloading?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulating-overloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulating Overloading
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-not-to-use-overloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      When NOT to Use Overloading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -402,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/07/abstract/" class="md-nav__link">
+      <a href="../../07/abstract/" class="md-nav__link">
         
   
   
@@ -429,20 +500,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -458,7 +527,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Exercises
@@ -469,32 +538,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    01. Circles
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../exercises/01/ex01/" class="md-nav__link">
         
   
   
@@ -505,35 +552,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#brief" class="md-nav__link">
-    <span class="md-ellipsis">
-      Brief
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -546,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02/ex02/" class="md-nav__link">
+      <a href="../../../exercises/02/ex02/" class="md-nav__link">
         
   
   
@@ -569,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03/ex03/" class="md-nav__link">
+      <a href="../../../exercises/03/ex03/" class="md-nav__link">
         
   
   
@@ -592,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04/ex04/" class="md-nav__link">
+      <a href="../../../exercises/04/ex04/" class="md-nav__link">
         
   
   
@@ -615,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05/ex05/" class="md-nav__link">
+      <a href="../../../exercises/05/ex05/" class="md-nav__link">
         
   
   
@@ -638,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06/ex06/" class="md-nav__link">
+      <a href="../../../exercises/06/ex06/" class="md-nav__link">
         
   
   
@@ -661,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07/ex07/" class="md-nav__link">
+      <a href="../../../exercises/07/ex07/" class="md-nav__link">
         
   
   
@@ -700,32 +718,61 @@
 
 
 
-<h1 id="exercise-1-circles">Exercise 1: Circles</h1>
-<p>In this exercise, you’ll create your first class in Python!</p>
-<h2 id="brief">Brief</h2>
-<p>Suppose you have three circles with radii of 5, 10, and 20, respectively. Model these circles as objects so that you can easily determine each circle’s radius, diameter, area, and perimeter.</p>
-<p><img alt="3 circles with radius of 5, 10, 20" src="../circles.png" /></p>
-<h1 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h1>
-<p>Begin by accepting the assignment from GitHub. </p>
-<hr />
-<h2 id="task-1-create-a-class-diagram">Task 1: Create a Class Diagram</h2>
-<p>Before you start coding, open the <code>classes.drawio</code> file at <a href="https://draw.io/">draw.io</a> or install the ‘Draw.io Integration’ extension for VS Code. Complete the class diagram by specifying the attributes and methods you plan to implement.</p>
-<div class="admonition warning">
-<p class="admonition-title">Checkpoint: Correct diagram</p>
-<p>Please confirm your class diagram with your teacher before proceeding to task 3.</p>
+<h1 id="unit-06-overloading">Unit 06: Overloading</h1>
+<p>While Python does not support traditional method overloading like Java or C++, we can achieve similar behavior through the use of default arguments. In this unit, we’ll explore how Python simulates overloading and how you can implement flexible method interfaces.</p>
+<h2 id="what-is-overloading">What is Overloading?</h2>
+<p>In many programming languages, <strong>overloading</strong> allows you to define multiple versions of the same method, each with different parameters. For example in java:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>But in Python, this <strong>does not</strong> work:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>  <span class="c1"># This will override the previous `add`!</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+</code></pre></div></td></tr></table></div>
+<p>Only the <strong>last</strong> function definition remains. Earlier ones are silently replaced.</p>
+<h2 id="simulating-overloading">Simulating Overloading</h2>
+<p>Since Python doesn't support overloading by default, we can simulate it using flexible parameters:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>  <span class="c1"># we set c with a default value of 0. </span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+</code></pre></div></td></tr></table></div>
+<p>Now, like the java version, this works with 2 or 3 arguments:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>       <span class="c1"># 3</span>
+<span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>    <span class="c1"># 6</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="when-not-to-use-overloading">When NOT to Use Overloading</h2>
+<p>While overloading is useful, but overusing flexible parameters can make code unclear; do not have one function that does <em>everything</em></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">do_stuff</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># ???</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition question">
+<p class="admonition-title">Discussion</p>
+<p>Discussion questions (please discuss this with your teacher!)</p>
+<ol>
+<li>What is overloading and why is it useful?</li>
+<li>Why doesn’t Python allow multiple functions with the same name like Java or C++? (<em>hint</em> there something to do with python being a dynamically typed language)</li>
+<li>How does using default parameters help us simulate overloading in Python? Find a function from Python's built-in libraries that uses default parameters like this.</li>
+</ol>
 </div>
-<hr />
-<h2 id="task-2-implement-the-class">Task 2: Implement the Class</h2>
-<p>Using your class diagram as a guide, implement the <code>Circle</code> class in Python.</p>
-<hr />
-<h2 id="task-3-implement-the-__str__-method">Task 3: Implement the <code>__str__</code> Method</h2>
-<p>Try printing an instance of your <code>Circle</code> object. You’ll likely see something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;__main__.Circle object at 0x000001E558684410&gt;
-</code></pre></div></td></tr></table></div>
-<p>This default output isn’t informative, as it only displays the object’s memory address. Fortunately, Python provides a special method called <code>__str__</code>, which lets you customize how your object is displayed when printed.</p>
-<p>Modify your <code>Circle</code> class by implementing the <code>__str__</code> method so that printing a circle displays something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Circle with radius 5.00; diameter 10.00; area 78.54 
-</code></pre></div></td></tr></table></div>
+<p><a href="../../../exercises/06/ex06/">Jump to exercise 06</a></p>
 
 
 

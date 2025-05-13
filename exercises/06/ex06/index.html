@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../../notes/07/abstract/">
+        <link rel="prev" href="../../05/ex05/">
       
       
-        <link rel="next" href="../../02/ex02/">
+        <link rel="next" href="../../07/ex07/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>01. Circles - PY2 OOP</title>
+        <title>06. Messenger - PY2 OOP</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-1-circles" class="md-skip">
+        <a href="#exercise-6-messenger" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              01. Circles
+              06. Messenger
             
           </span>
         </div>
@@ -469,32 +469,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    01. Circles
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../01/ex01/" class="md-nav__link">
         
   
   
@@ -505,35 +483,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#brief" class="md-nav__link">
-    <span class="md-ellipsis">
-      Brief
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -635,10 +584,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../06/ex06/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    06. Messenger
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -649,6 +620,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#brief" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brief
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-0-accept-the-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 0: Accept the Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-refactor-the-messenger-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 1: Refactor the Messenger Class
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2-test-and-submit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 2: Test and Submit
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -700,32 +727,25 @@
 
 
 
-<h1 id="exercise-1-circles">Exercise 1: Circles</h1>
-<p>In this exercise, you’ll create your first class in Python!</p>
+<h1 id="exercise-6-messenger">Exercise 6: Messenger</h1>
 <h2 id="brief">Brief</h2>
-<p>Suppose you have three circles with radii of 5, 10, and 20, respectively. Model these circles as objects so that you can easily determine each circle’s radius, diameter, area, and perimeter.</p>
-<p><img alt="3 circles with radius of 5, 10, 20" src="../circles.png" /></p>
-<h1 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h1>
-<p>Begin by accepting the assignment from GitHub. </p>
+<p>You're tasked with writing a <code>Messenger</code> class that sends messages to recipients in different formats and via different methods. The message can vary depending on the amount of information provided by the user, such as the type of message (SMS, Email, App), an optional subject, attachments, or priority levels.</p>
+<p>In this task, your goal is to refactor the provided <code>Messenger</code> class so that it only contains <strong>one <code>send</code> method</strong>, which can handle all possible combinations of information. You'll use default parameters and Python's flexibility with arguments to simplify the process and avoid code duplication.</p>
 <hr />
-<h2 id="task-1-create-a-class-diagram">Task 1: Create a Class Diagram</h2>
-<p>Before you start coding, open the <code>classes.drawio</code> file at <a href="https://draw.io/">draw.io</a> or install the ‘Draw.io Integration’ extension for VS Code. Complete the class diagram by specifying the attributes and methods you plan to implement.</p>
-<div class="admonition warning">
-<p class="admonition-title">Checkpoint: Correct diagram</p>
-<p>Please confirm your class diagram with your teacher before proceeding to task 3.</p>
-</div>
+<h2 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h2>
+<p>Accept the assignment using the provided GitHub Classroom link.</p>
 <hr />
-<h2 id="task-2-implement-the-class">Task 2: Implement the Class</h2>
-<p>Using your class diagram as a guide, implement the <code>Circle</code> class in Python.</p>
+<h2 id="task-1-refactor-the-messenger-class">Task 1: Refactor the Messenger Class</h2>
+<p>The initial <strong>Messenger</strong> class contains multiple methods for each combination of information. Refactor it so that there is only one method <code>send</code> that can handle all cases based on the provided arguments.</p>
 <hr />
-<h2 id="task-3-implement-the-__str__-method">Task 3: Implement the <code>__str__</code> Method</h2>
-<p>Try printing an instance of your <code>Circle</code> object. You’ll likely see something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;__main__.Circle object at 0x000001E558684410&gt;
-</code></pre></div></td></tr></table></div>
-<p>This default output isn’t informative, as it only displays the object’s memory address. Fortunately, Python provides a special method called <code>__str__</code>, which lets you customize how your object is displayed when printed.</p>
-<p>Modify your <code>Circle</code> class by implementing the <code>__str__</code> method so that printing a circle displays something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Circle with radius 5.00; diameter 10.00; area 78.54 
-</code></pre></div></td></tr></table></div>
+<h2 id="task-2-test-and-submit">Task 2: Test and Submit</h2>
+<ol>
+<li>After implementing the <code>send</code> method, write a few test in <code>main.py</code> cases to ensure your code works as expected.</li>
+<li>Test edge cases like:</li>
+<li>No optional arguments.</li>
+<li>Only subject or attachment passed.</li>
+<li>Only priority passed.</li>
+</ol>
 
 
 

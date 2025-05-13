@@ -269,7 +269,7 @@
   
   
   <span class="md-ellipsis">
-    1. Basics
+    01. Basics
     
   </span>
   
@@ -292,7 +292,7 @@
   
   
   <span class="md-ellipsis">
-    2. Information Hiding
+    02. Information Hiding
     
   </span>
   
@@ -315,7 +315,7 @@
   
   
   <span class="md-ellipsis">
-    3. Composition
+    03. Composition
     
   </span>
   
@@ -338,7 +338,76 @@
   
   
   <span class="md-ellipsis">
-    4. Class Variables and Methods
+    04. Class Variables and Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/05/subclasses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Inheritance and Subclasses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/06/overloading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/07/abstract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Abstract Classes
     
   </span>
   
@@ -599,6 +668,75 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05/ex05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Birds of a Feather
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06/ex06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Messenger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07/ex07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Birds of a Feather 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -624,7 +762,7 @@
 
 <h1 id="exercise-3-circle-with-coordinates">Exercise 3: Circle with Coordinates</h1>
 <p>This exercise will help you understand <strong>composition</strong> in object-oriented programming by modeling geometric objects in a 2D Cartesian plane. Specifically, we will be focusing on the <code>Circle</code> class from exercise 01. </p>
-<p>You will also explore how Python handles <strong>primitive</strong> and <strong>reference types</strong> and some things to take note of.</p>
+<p>You will also explore how Python handles primitive and reference types and some things to take note of.</p>
 <hr />
 <h2 id="brief">Brief</h2>
 <p>Previously, you learned how to model a simple shape like a <code>Circle</code> using classes. Now, you will extend this circle and place it in 2D Cartesian (x-y) plane. This means each shape must also keep track of its position in the x-y plane. </p>
@@ -645,7 +783,7 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10. </
 <h2 id="task-2-point-class">Task 2: <code>Point</code> Class</h2>
 <p>Rather than keeping track of x,y coordinate individually with our shapes using attribute for each shape, we will create a dedicated <code>Point</code> class that encapsulate the coordinate and the related logic for us.</p>
 <h3 id="design">Design</h3>
-<p>Thus, we will begin by creating a <code>Point</code> class with these specifications:</p>
+<p>Start by creating a <code>Point</code> class with these specifications:</p>
 <p><strong>Attributes</strong>:</p>
 <ul>
 <li><code>x</code> (float): The x-coordinate.</li>
@@ -657,7 +795,7 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10. </
 <li><code>__str__</code>: Returns a string representation in the format <code>(x, y)</code>.</li>
 </ul>
 <h3 id="__eq__-method"><code>__eq__</code> method</h3>
-<p>Before you continue, explore the following code:</p>
+<p>Before you continue to task 3, let us explore the following code:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -667,8 +805,8 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10. </
 <span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Even though both p1 and p2 at at (0,0), the output of this code will be false! </p>
-<p>By default if you do not implement the <code>__eq__</code> method in python, python will compare whether the object are the same if they have same reference (location in memory). Since, p1 &amp; p2 has different reference (as they are 2 separate object located in different area of the memory) it return false. </p>
-<p>While, something like
+<p>By default if you do not implement the <code>__eq__</code> method in python, python will compare whether the object are the same if they have same reference (location in memory). Since, p1 and p2 has different reference (as they are 2 separate object located in different area of the computer memory) it return false. </p>
+<p>On the other hand, something like
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -678,7 +816,10 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10. </
 <span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 will return true.</p>
-<p>Your task: Implement the <code>__eq__</code> method such that we can compare the <code>Point</code> objects using the == operator. </p>
+<p><strong>Task</strong>: </p>
+<ul>
+<li>Research on the <code>__eq__</code> method and implement it  such that we can compare the <code>Point</code> objects using the == operator. </li>
+</ul>
 <hr />
 <h2 id="task-3-design-the-circle-class-using-composition">Task 3: Design the <code>Circle</code> Class Using Composition</h2>
 <p>Redesign your <code>Circle</code> class from Exercise 1 to utilize <strong>composition</strong> by including a <code>Point</code> object as its center. </p>

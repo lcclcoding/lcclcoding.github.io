@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../03/composition/">
+        <link rel="prev" href="../../06/overloading/">
       
       
-        <link rel="next" href="../../05/subclasses/">
+        <link rel="next" href="../../../exercises/01/ex01/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>04. Class Variables and Methods - PY2 OOP</title>
+        <title>07. Abstract Classes - PY2 OOP</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unit-04-class-fields-and-methods" class="md-skip">
+        <a href="#unit-07-abstract-classes" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              04. Class Variables and Methods
+              07. Abstract Classes
             
           </span>
         </div>
@@ -332,32 +332,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    04. Class Variables and Methods
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../04/class-field-method/" class="md-nav__link">
         
   
   
@@ -368,101 +346,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variables
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Variables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#instance-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instance Variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Variables
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Methods
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#instance-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instance Methods
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Methods
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -518,10 +401,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../07/abstract/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    07. Abstract Classes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -532,6 +437,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shapes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-an-abstract-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing an Abstract Base Class
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-if-a-method-isnt-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Happens If a Method Isn't Implemented?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -766,29 +718,13 @@
 
 
 
-<h1 id="unit-04-class-fields-and-methods">Unit 04: Class Fields and Methods</h1>
-<p>Using the <code>Rectangle</code> class from Unit 01, this unit will introduce you to the difference between instance and class variables, as well as instance and class methods.</p>
-<h2 id="variables">Variables</h2>
-<p>In this section we will look the difference between instance and class variables </p>
-<h3 id="instance-variables">Instance Variables</h3>
-<p>As a recap, <strong>instance variables</strong> are used to store data unique to each object. They are defined with <code>self</code> inside the <code>__init__</code> constructor and belong to each specific instance of a class.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">base</span>         <span class="c1"># instance variable</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>     <span class="c1"># instance variable</span>
-
-    <span class="o">...</span>
-</code></pre></div></td></tr></table></div>
-<p>Every <code>Rectangle</code> object instance has its own <code>base</code> and <code>height</code>, so changes to one object’s instance variables won’t affect others.</p>
-<hr />
-<h3 id="class-variables">Class Variables</h3>
-<p>In contrast, <strong>class variables</strong> are shared among all instances of a class. They are typically used for properties that should be consistent for every object, or to keep track of class-level information.</p>
-<p>For example, all rectangles have four sides, and you may want to count how many rectangles have been created:</p>
+<h1 id="unit-07-abstract-classes">Unit 07: Abstract Classes</h1>
+<p>Recall that with inheritance, we are modeling an "is-a" relationship. Abstract classes are a natural extension of inheritance — with the key difference that an abstract class <strong>relies on its child classes to implement certain methods</strong>.</p>
+<h2 id="shapes">Shapes</h2>
+<p>Consider a <code>Rectangle</code> class and a <code>Circle</code> class:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rectangle</label><label for="__tabbed_1_2">Circle</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -799,43 +735,18 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
-    <span class="n">SIDES</span> <span class="o">=</span> <span class="mi">4</span>               <span class="c1"># class variable (constant)</span>
-    <span class="n">_count</span> <span class="o">=</span> <span class="mi">0</span>              <span class="c1"># class variable (for tracking)</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">base</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
-        <span class="n">Rectangle</span><span class="o">.</span><span class="n">_count</span> <span class="o">+=</span> <span class="mi">1</span>    <span class="c1"># update class variable</span>
-
-    <span class="o">...</span>
-</code></pre></div></td></tr></table></div>
-<p>No matter how many <code>Rectangle</code> objects you create, both <code>SIDES</code> and <code>count</code> are shared and accessible from every instance and through the class itself.</p>
-<hr />
-<h2 id="methods">Methods</h2>
-<p>In this section we will look the difference between instance and class methods. </p>
-<h3 id="instance-methods">Instance Methods</h3>
-<p>Like instance variables, <strong>instance methods</strong> operate on individual objects and can access or modify instance variables. In Python, they always take <code>self</code> as their first parameter.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">base</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
 
-    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                     <span class="c1"># instance method</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
 
-    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<hr />
-<h3 id="class-methods">Class Methods</h3>
-<p>Similarly, <strong>class methods</strong> are used for operations that affect the class as a whole, not specific instances. They are defined with the <code>@classmethod</code> decorator and take <code>cls</code> as their first parameter.</p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -846,83 +757,145 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
-    <span class="n">_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
 
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">*</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Both classes work independently — but they share a <strong>common identity</strong>: they are both <em>shapes</em>.</p>
+<h2 id="introducing-an-abstract-base-class">Introducing an Abstract Base Class</h2>
+<p>Let’s define a base class <code>Shape</code> that ensures all shapes must implement both <code>area()</code> and <code>perimeter()</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>```python hl_lines=&quot;1 2 3&quot;
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+```
+</code></pre></div></td></tr></table></div>
+<p>Now, we can make both <code>Rectangle</code> and <code>Circle</code> subclasses of <code>Shape</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Rectangle</label><label for="__tabbed_2_2">Circle</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">base</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
-        <span class="n">Rectangle</span><span class="o">.</span><span class="n">_count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">how_many</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>              <span class="c1"># class method</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_count</span>           <span class="c1"># cls here is Rectangle</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<div class="admonition warning">
-<p class="admonition-title">Limited Access</p>
-<p>Class methods cannot access instance variables (since they don’t have access to <code>self</code>), but can access class variables and other class methods.</p>
 </div>
-<hr />
-<h2 id="summary">Summary</h2>
-<div class="admonition note">
-<p class="admonition-title">Summary Table</p>
-<table>
-<thead>
-<tr>
-<th>Field/Method Type</th>
-<th>How to Define</th>
-<th>Belongs To</th>
-<th>First Parameter</th>
-<th>Can Access</th>
-<th>Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Instance variable</td>
-<td><code>self.base</code></td>
-<td>Instance</td>
-<td>-</td>
-<td>Instance</td>
-<td>Data unique to each object</td>
-</tr>
-<tr>
-<td>Instance method</td>
-<td><code>def area(self):</code></td>
-<td>Instance</td>
-<td><code>self</code></td>
-<td>Instance</td>
-<td>Behavior based on instance attributes</td>
-</tr>
-<tr>
-<td>Class variable</td>
-<td><code>count = 0</code></td>
-<td>Class</td>
-<td>-</td>
-<td>Class</td>
-<td>Data shared by all instances</td>
-</tr>
-<tr>
-<td>Class method</td>
-<td><code>@classmethod</code></td>
-<td>Class</td>
-<td><code>cls</code></td>
-<td>Class</td>
-<td>Behavior related to the class itself</td>
-</tr>
-</tbody>
-</table>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span>
+</code></pre></div></td></tr></table></div>
 </div>
+</div>
+</div>
+<p>Now we can treat both as Shapes:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;is a Shape?: </span><span class="si">{</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span><span class="w"> </span><span class="n">Shape</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Area: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Perimeter: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="what-happens-if-a-method-isnt-implemented">What Happens If a Method Isn't Implemented?</h2>
+<p>Let’s say we define a subclass that forgets to implement all the required methods:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">IncompleteShape</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</code></pre></div></td></tr></table></div>
+<p>This <strong>does not</strong> implement <code>perimeter()</code>, so trying to instantiate it:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shape</span> <span class="o">=</span> <span class="n">IncompleteShape</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>Raises a <code>TypeError</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>TypeError: Can&#39;t instantiate abstract class IncompleteShape with abstract method perimeter
+</code></pre></div></td></tr></table></div>
+<p>Python prevents you from creating objects from incomplete subclasses.</p>
 <hr />
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
-<p>Discussion questions (please discuss this with your teacher!)</p>
+<p>Discussion questions (please discuss these with your teacher!):</p>
 <ol>
-<li>What is the difference between class and instance methods/variables?</li>
-<li>When do we use class methods/variables?</li>
+<li>What is the purpose of an abstract base class, and how is it different from a regular parent class?</li>
+<li>What would happen if you tried to create an instance of the abstract <code>Shape</code> class directly?</li>
+<li>What happens if a subclass does not implement all of the abstract methods required by its abstract base class? Why is this behavior important? (hint: it a form of guarantee (confirm + chop))</li>
 </ol>
 </div>
-<p><a href="../../../exercises/04/ex04/">Jump to exercise 04</a></p>
+<hr />
+<p><a href="../../../exercises/07/ex07/">Jump to exercise 07</a></p>
 
 
 

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../../notes/07/abstract/">
+        <link rel="prev" href="../../04/ex04/">
       
       
-        <link rel="next" href="../../02/ex02/">
+        <link rel="next" href="../../06/ex06/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>01. Circles - PY2 OOP</title>
+        <title>05. Birds of a Feather - PY2 OOP</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-1-circles" class="md-skip">
+        <a href="#exercise-5-birds-of-a-feather" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              01. Circles
+              05. Birds of a Feather
             
           </span>
         </div>
@@ -469,32 +469,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    01. Circles
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../01/ex01/" class="md-nav__link">
         
   
   
@@ -505,35 +483,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#brief" class="md-nav__link">
-    <span class="md-ellipsis">
-      Brief
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -612,10 +561,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../05/ex05/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    05. Birds of a Feather
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -626,6 +597,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#brief" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brief
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-0-accept-the-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 0: Accept the Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-complete-class-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 1: Complete class diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2-implement-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 2: Implement the code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-3-zoo-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 3: Zoo Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-4-duckly-duck-multiple-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 4: Duckly Duck — Multiple Inheritance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -700,32 +745,103 @@
 
 
 
-<h1 id="exercise-1-circles">Exercise 1: Circles</h1>
-<p>In this exercise, you’ll create your first class in Python!</p>
+<h1 id="exercise-5-birds-of-a-feather">Exercise 5: Birds of a Feather</h1>
+<p>In this exercise, you'll apply inheritance and method overriding to model a class hierarchy of birds. This will help you understand is-a relationships and when it makes sense to use inheritance to share and specialize behavior.</p>
 <h2 id="brief">Brief</h2>
-<p>Suppose you have three circles with radii of 5, 10, and 20, respectively. Model these circles as objects so that you can easily determine each circle’s radius, diameter, area, and perimeter.</p>
-<p><img alt="3 circles with radius of 5, 10, 20" src="../circles.png" /></p>
-<h1 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h1>
-<p>Begin by accepting the assignment from GitHub. </p>
+<p>You’re going to build a simple bird simulator using classes and inheritance to model a zoo's bird population. All birds share some common characteristics — like laying eggs and walking — but certain types of birds have additional abilities. For example, some birds can fly, others can swim, and some can’t do either.</p>
+<p>Rather than duplicating code across all bird types, you’ll use inheritance to model shared behavior in a base class Bird, and extend it in subclasses. </p>
+<p>The zoo has a bird population as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>1. Sparrow
+    Abilities: walk, lay egg, fly
+    Count: 2 (names: chirpy, flit)
+
+2. Penguin
+    Abilities: walk, lay egg, swim
+    Count: 2 (names: tux, pebble)
+
+3. Ostrich
+    Abilities: walk, lay egg
+    Count: 2 (names: dash, featherfoot)
+
+4. Parrot
+    Abilities: walk, lay egg, fly, mimic
+    Count: 2 (names: kiwi, echo)
+</code></pre></div></td></tr></table></div>
+<p>Calling each action (e.g. <code>walk()</code>) should print something like:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>flit (Parrot) walks
+flit (Parrot) lays an egg
+flit (Parrot) flies
+flit (Parrot) mimic a sound 
+</code></pre></div></td></tr></table></div></p>
 <hr />
-<h2 id="task-1-create-a-class-diagram">Task 1: Create a Class Diagram</h2>
-<p>Before you start coding, open the <code>classes.drawio</code> file at <a href="https://draw.io/">draw.io</a> or install the ‘Draw.io Integration’ extension for VS Code. Complete the class diagram by specifying the attributes and methods you plan to implement.</p>
+<h2 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h2>
+<p>Accept the assignment using the provided GitHub Classroom link.</p>
+<hr />
+<h2 id="task-1-complete-class-diagram">Task 1: Complete class diagram</h2>
+<p>Open the <code>class.drawio</code> file using <a href="https://draw.io/">draw.io</a> or the ‘Draw.io Integration’ extension in VS Code. Complete the class diagram for the all of the classes, specifying its attributes, methods and relationship. </p>
+<p>You should think of 2 suitable subclasses that help better model the relationship of the <code>Parrot</code>, <code>Ostrich</code> , <code>Penguin</code> , <code>Sparrow</code> classes. The base bird class has been completed for you. Override and add the required methods for your subclass.</p>
 <div class="admonition warning">
 <p class="admonition-title">Checkpoint: Correct diagram</p>
 <p>Please confirm your class diagram with your teacher before proceeding to task 3.</p>
 </div>
-<hr />
-<h2 id="task-2-implement-the-class">Task 2: Implement the Class</h2>
-<p>Using your class diagram as a guide, implement the <code>Circle</code> class in Python.</p>
-<hr />
-<h2 id="task-3-implement-the-__str__-method">Task 3: Implement the <code>__str__</code> Method</h2>
-<p>Try printing an instance of your <code>Circle</code> object. You’ll likely see something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;__main__.Circle object at 0x000001E558684410&gt;
+<h2 id="task-2-implement-the-code">Task 2: Implement the code</h2>
+<p>Implement by following the class diagram above.</p>
+<h2 id="task-3-zoo-simulation">Task 3: Zoo Simulation</h2>
+<p>Create a Zoo class that will manage the bird population.</p>
+<p>Requirements:
+   - Store each bird as an instance of its appropriate class
+   - New birds can be added birds to the zoo
+   - The Zoo should have a method display_all_actions that calls all the actions available for each bird in the zoo.</p>
+<p>Update your <code>classes.drawio</code> diagram.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Example Output:
+chirpy (Sparrow) walks
+chirpy (Sparrow) lays an egg
+chirpy (Sparrow) flies
+flit (Parrot) walks
+flit (Parrot) lays an egg
+flit (Parrot) flies
+flit (Parrot) mimic a sound 
+...
 </code></pre></div></td></tr></table></div>
-<p>This default output isn’t informative, as it only displays the object’s memory address. Fortunately, Python provides a special method called <code>__str__</code>, which lets you customize how your object is displayed when printed.</p>
-<p>Modify your <code>Circle</code> class by implementing the <code>__str__</code> method so that printing a circle displays something like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Circle with radius 5.00; diameter 10.00; area 78.54 
-</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="task-4-duckly-duck-multiple-inheritance">Task 4: Duckly Duck — Multiple Inheritance</h2>
+<p>One of the zoo's new arrivals is a very special bird: Duckly. Duckly can not only walk, lay eggs, swim, fly and also quack!</p>
+<p>Create a new class <code>Duck</code> and use multiple inheritance in python to model Duckly’s behavior. Update the class diagram and research on how multiple inheritance works in python. Add the Duckly to the Zoo.</p>
+<div class="admonition question">
+<p class="admonition-title">Discussion</p>
+<p>Discussion questions (please discuss this with your teacher!)</p>
+<ol>
+<li>What is multiple inheritance in Python, and how is it different from single inheritance?</li>
+<li>What is the Method Resolution Order (MRO), and how does Python determine which method to call when multiple classes define the same method?</li>
+<li>Why might using multiple inheritance lead to ambiguity or conflicts? Can you give an example where this might happen?</li>
+<li>How does Python's super() function behave in a class that uses multiple inheritance? How can it help reduce code duplication?</li>
+</ol>
+</div>
 
 
 

@@ -12,6 +12,8 @@
         <link rel="prev" href="../../03/ex03/">
       
       
+        <link rel="next" href="../../05/ex05/">
+      
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
@@ -267,7 +269,7 @@
   
   
   <span class="md-ellipsis">
-    1. Basics
+    01. Basics
     
   </span>
   
@@ -290,7 +292,7 @@
   
   
   <span class="md-ellipsis">
-    2. Information Hiding
+    02. Information Hiding
     
   </span>
   
@@ -313,7 +315,7 @@
   
   
   <span class="md-ellipsis">
-    3. Composition
+    03. Composition
     
   </span>
   
@@ -336,7 +338,76 @@
   
   
   <span class="md-ellipsis">
-    4. Class Variables and Methods
+    04. Class Variables and Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/05/subclasses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Inheritance and Subclasses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/06/overloading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/07/abstract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Abstract Classes
     
   </span>
   
@@ -645,6 +716,75 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05/ex05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Birds of a Feather
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06/ex06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Messenger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07/ex07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Birds of a Feather 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -731,9 +871,9 @@
 <h2 id="task-3-alternative-constructor">Task 3: Alternative Constructor</h2>
 <p>Sometimes, we want to create a <code>CurrencyConverter</code> instance from EUR, and have it compute the SGD amount automatically based on the current exchange rate.</p>
 <h3 id="your-task_2">Your Task:</h3>
-<p>Add a class method <code>from_eur(cls, eur_amount)</code> that:</p>
+<p>Add a class method <code>from_eur(cls, eur_amount)</code> ,  <code>from_usd(cls, usd_amount)</code> and  <code>from_jpy(cls, jpy_amount)</code> that:</p>
 <ol>
-<li>Converts <code>eur_amount</code> to SGD using the current <code>sgd_to_eur</code> rate.</li>
+<li>Converts <code>CURR_amount</code> to SGD using the current <code>sgd_to_CURR</code> rate.</li>
 <li>Returns a new <code>CurrencyConverter</code> object with the computed SGD amount.</li>
 </ol>
 <h3 id="example_2">Example:</h3>
