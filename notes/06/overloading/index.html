@@ -721,7 +721,7 @@
 <h1 id="unit-06-overloading">Unit 06: Overloading</h1>
 <p>While Python does not support traditional method overloading like Java or C++, we can achieve similar behavior through the use of default arguments. In this unit, we’ll explore how Python simulates overloading and how you can implement flexible method interfaces.</p>
 <h2 id="what-is-overloading">What is Overloading?</h2>
-<p>In many programming languages, <strong>overloading</strong> allows you to define multiple versions of the same method, each with different parameters. For example in java:</p>
+<p>In many programming languages, overloading allows you to define multiple versions of the same method, each with different parameters. For example in java:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -742,10 +742,10 @@
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>  <span class="c1"># This will override the previous `add`!</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>  <span class="c1"># This will override the previous `add`</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
 </code></pre></div></td></tr></table></div>
-<p>Only the <strong>last</strong> function definition remains. Earlier ones are silently replaced.</p>
+<p>Only the last function definition remains. Earlier ones are replaced.</p>
 <h2 id="simulating-overloading">Simulating Overloading</h2>
 <p>Since Python doesn't support overloading by default, we can simulate it using flexible parameters:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -763,6 +763,7 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">do_stuff</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="c1"># ???</span>
 </code></pre></div></td></tr></table></div>
+<p>Only use overloading for method that are similar.</p>
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
 <p>Discussion questions (please discuss this with your teacher!)</p>

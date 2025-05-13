@@ -478,6 +478,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="What Happens If a Method Isn&#39;t Implemented?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instantiating-an-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiating an abstract class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -719,7 +743,8 @@
 
 
 <h1 id="unit-07-abstract-classes">Unit 07: Abstract Classes</h1>
-<p>Recall that with inheritance, we are modeling an "is-a" relationship. Abstract classes are a natural extension of inheritance — with the key difference that an abstract class <strong>relies on its child classes to implement certain methods</strong>.</p>
+<p>Recall that with inheritance, we are modeling an "is-a" relationship. Abstract classes are a natural extension of inheritance — with the key difference that an abstract class relies on its child classes to implement certain methods. </p>
+<p>In other words, abstract classes and methods are just concept and idea of the things you are trying to model. </p>
 <h2 id="shapes">Shapes</h2>
 <p>Consider a <code>Rectangle</code> class and a <code>Circle</code> class:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rectangle</label><label for="__tabbed_1_2">Circle</label></div>
@@ -790,20 +815,16 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>```python hl_lines=&quot;1 2 3&quot;
-from abc import ABC, abstractmethod
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+</span>
+<span class="hll"><span class="k">class</span> <span class="nc">Shape</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+</span>    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
 
-class Shape(ABC):
-    @abstractmethod
-    def area(self):
-        pass
-
-    @abstractmethod
-    def perimeter(self):
-        pass
-```
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>
 <p>Now, we can make both <code>Rectangle</code> and <code>Circle</code> subclasses of <code>Shape</code>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Rectangle</label><label for="__tabbed_2_2">Circle</label></div>
@@ -870,6 +891,7 @@ class Shape(ABC):
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Perimeter: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="what-happens-if-a-method-isnt-implemented">What Happens If a Method Isn't Implemented?</h2>
+<h3 id="missing-implementation">Missing implementation</h3>
 <p>Let’s say we define a subclass that forgets to implement all the required methods:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -877,13 +899,18 @@ class Shape(ABC):
     <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">0</span>
 </code></pre></div></td></tr></table></div>
-<p>This <strong>does not</strong> implement <code>perimeter()</code>, so trying to instantiate it:</p>
+<p>This is missing the implementation for the <code>perimeter()</code> method, so trying to instantiate it:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shape</span> <span class="o">=</span> <span class="n">IncompleteShape</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>Raises a <code>TypeError</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>TypeError: Can&#39;t instantiate abstract class IncompleteShape with abstract method perimeter
 </code></pre></div></td></tr></table></div>
 <p>Python prevents you from creating objects from incomplete subclasses.</p>
+<h3 id="instantiating-an-abstract-class">Instantiating an abstract class</h3>
+<p>Likewise, 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shape</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">()</span>     <span class="c1"># a shape is a shape!</span>
+</code></pre></div></td></tr></table></div>
+will not work as well. You cannot instantiate abstract class.</p>
 <hr />
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
