@@ -749,7 +749,7 @@
 <p>In this exercise, you'll apply inheritance and method overriding to model a class hierarchy of birds. This will help you understand is-a relationships and when it makes sense to use inheritance to share and specialize behavior.</p>
 <h2 id="brief">Brief</h2>
 <p>You’re going to build a simple bird simulator using classes and inheritance to model a zoo's bird population. All birds share some common characteristics — like laying eggs and walking — but certain types of birds have additional abilities. For example, some birds can fly, others can swim, and some can’t do either.</p>
-<p>Rather than duplicating code across all bird types, you’ll use inheritance to model shared behavior in a base class Bird, and extend it in subclasses. </p>
+<p>Rather than duplicating code across all bird types, you’ll use inheritance to model shared behavior in a base class Bird, and extend it in subclasses.</p>
 <p>The zoo has a bird population as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -781,7 +781,7 @@
     Abilities: walk, lay egg, fly, mimic
     Count: 2 (names: kiwi, echo)
 </code></pre></div></td></tr></table></div>
-<p>Calling each action (e.g. <code>walk()</code>) should print something like:
+<p>Calling each action (e.g. <code>walk()</code>) should print something like:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -789,13 +789,13 @@
 flit (Parrot) lays an egg
 flit (Parrot) flies
 flit (Parrot) mimic a sound 
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h2>
 <p>Accept the assignment using the provided GitHub Classroom link.</p>
 <hr />
 <h2 id="task-1-complete-class-diagram">Task 1: Complete class diagram</h2>
-<p>Open the <code>class.drawio</code> file using <a href="https://draw.io/">draw.io</a> or the ‘Draw.io Integration’ extension in VS Code. Complete the class diagram for the all of the classes, specifying its attributes, methods and relationship. </p>
+<p>Open the <code>class.drawio</code> file using <a href="https://draw.io/">draw.io</a> or the ‘Draw.io Integration’ extension in VS Code. Complete the class diagram for the all of the classes, specifying its attributes, methods and relationship.</p>
 <p>You should think of 2 suitable subclasses that help better model the relationship of the <code>Parrot</code>, <code>Ostrich</code> , <code>Penguin</code> , <code>Sparrow</code> classes. The base bird class has been completed for you. Override and add the required methods for your subclass.</p>
 <div class="admonition warning">
 <p class="admonition-title">Checkpoint: Correct diagram</p>
@@ -805,10 +805,12 @@ flit (Parrot) mimic a sound
 <p>Implement by following the class diagram above.</p>
 <h2 id="task-3-zoo-simulation">Task 3: Zoo Simulation</h2>
 <p>Create a Zoo class that will manage the bird population.</p>
-<p>Requirements:
-   - Store each bird as an instance of its appropriate class
-   - New birds can be added birds to the zoo
-   - The Zoo should have a method display_all_actions that calls all the actions available for each bird in the zoo.</p>
+<p>Requirements:</p>
+<ul>
+<li>Store each bird as an instance of its appropriate class</li>
+<li>New birds can be added birds to the zoo</li>
+<li>The Zoo should have a method display_all_actions that calls all the actions available for each bird in the zoo.</li>
+</ul>
 <p>Update your <code>classes.drawio</code> diagram.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -834,6 +836,7 @@ flit (Parrot) mimic a sound
 <p>Create a new class <code>Duck</code> and use multiple inheritance in python to model Duckly’s behavior. Update the class diagram and research on how multiple inheritance works in python. Add the Duckly to the Zoo.</p>
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
+</div>
 <p>Discussion questions (please discuss this with your teacher!)</p>
 <ol>
 <li>What is multiple inheritance in Python, and how is it different from single inheritance?</li>
@@ -841,7 +844,6 @@ flit (Parrot) mimic a sound
 <li>Why might using multiple inheritance lead to ambiguity or conflicts? Can you give an example where this might happen?</li>
 <li>How does Python's super() function behave in a class that uses multiple inheritance? How can it help reduce code duplication?</li>
 </ol>
-</div>
 
 
 

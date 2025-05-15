@@ -620,6 +620,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="__eq__ method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#study" class="md-nav__link">
+    <span class="md-ellipsis">
+      Study
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -761,13 +785,13 @@
 
 
 <h1 id="exercise-3-circle-with-coordinates">Exercise 3: Circle with Coordinates</h1>
-<p>This exercise will help you understand <strong>composition</strong> in object-oriented programming by modeling geometric objects in a 2D Cartesian plane. Specifically, we will be focusing on the <code>Circle</code> class from exercise 01. </p>
+<p>This exercise will help you understand composition in object-oriented programming by modeling geometric objects in a 2D Cartesian plane. Specifically, we will be focusing on the <code>Circle</code> class from exercise 01.</p>
 <p>You will also explore how Python handles primitive and reference types and some things to take note of.</p>
 <hr />
 <h2 id="brief">Brief</h2>
-<p>Previously, you learned how to model a simple shape like a <code>Circle</code> using classes. Now, you will extend this circle and place it in 2D Cartesian (x-y) plane. This means each shape must also keep track of its position in the x-y plane. </p>
+<p>Previously, you learned how to model a simple shape like a <code>Circle</code> using classes. Now, you will extend this circle and place it in 2D Cartesian (x-y) plane. This means each circle must also keep track of coordinates in the x-y plane.</p>
 <p><img alt="Image" src="../circle.png" />
-Above is an image of a circle with the circle point (0,0) and a radius of 10. </p>
+Above is an image of a circle with the circle point (0,0) and a radius of 10.</p>
 <hr />
 <h2 id="task-0-accept-the-assignment">Task 0: Accept the Assignment</h2>
 <p>Accept the assignment using the provided GitHub Classroom link.</p>
@@ -791,10 +815,11 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10. </
 </ul>
 <p><strong>Methods</strong>:</p>
 <ul>
-<li><code>distance_to(other)</code>: Returns the Euclidean distance between this point and another <code>Point</code> object.</li>
+<li><code>distance_to(other)</code>: Returns the Euclidean distance between this point and another <code>Point</code> object. Raise a ValueError if the object is not another <code>Point</code> object (<em>hint: use the <code>isinstance(...)</code> function</em>)</li>
 <li><code>__str__</code>: Returns a string representation in the format <code>(x, y)</code>.</li>
 </ul>
 <h3 id="__eq__-method"><code>__eq__</code> method</h3>
+<h4 id="study">Study</h4>
 <p>Before you continue to task 3, let us explore the following code:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -804,9 +829,9 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10. </
 
 <span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>Even though both p1 and p2 at at (0,0), the output of this code will be false! </p>
-<p>By default if you do not implement the <code>__eq__</code> method in python, python will compare whether the object are the same if they have same reference (location in memory). Since, p1 and p2 has different reference (as they are 2 separate object located in different area of the computer memory) it return false. </p>
-<p>On the other hand, something like
+<p>Even though both p1 and p2 at at (0,0), the output of this code will be false!</p>
+<p>By default if you do not implement the <code>__eq__</code> method in python, python will compare whether the object are the same if they have same reference (location in memory). Since, p1 and p2 has different reference (as they are 2 separate object located in different area of the computer memory) it return false.</p>
+<p>On the other hand, something like</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -815,17 +840,14 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10. </
 
 <span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-will return true.</p>
-<p><strong>Task</strong>: </p>
-<ul>
-<li>Research on the <code>__eq__</code> method and implement it  such that we can compare the <code>Point</code> objects using the == operator. </li>
-</ul>
+<p>will return true.</p>
+<h4 id="your-task">Your task</h4>
+<p>Research on the <code>__eq__</code> method and implement it such that we can compare different <code>Point</code> objects using the == operator.</p>
 <hr />
 <h2 id="task-3-design-the-circle-class-using-composition">Task 3: Design the <code>Circle</code> Class Using Composition</h2>
-<p>Redesign your <code>Circle</code> class from Exercise 1 to utilize <strong>composition</strong> by including a <code>Point</code> object as its center. </p>
-<p>Implement another a method such we are able to find the distance between 2 circle. Raise a ValueError if the object is not a circle (<em>hint: use <code>isinstance(...) function</code></em>)</p>
+<p>Redesign your <code>Circle</code> class from Exercise 1 to utilize <strong>composition</strong> by including a <code>Point</code> object as its center. Implement another a method such we are able to find the distance between 2 circle. Raise a ValueError if the object is not a circle</p>
 <p><img alt="alt text" src="../circle-distance.png" /></p>
-<p>Note: If the circle is overlapping you should return zero. </p>
+<p>Note: If the circle is overlapping you should return zero.</p>
 
 
 

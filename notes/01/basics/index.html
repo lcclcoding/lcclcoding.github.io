@@ -802,13 +802,13 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Key Takeaway</p>
-<p>Notice the difference? In the OOP approach, we don’t need to know the formulas for area and perimeter - the logic for those are <em>encapsulated</em> within the object. This demonstrates two key principles of OOP: abstraction and encapsulation. </p>
-<p>Abstraction means hiding complex implementation details and exposing only what’s essential to the user. This makes code easier to read, maintain, and reuse, while reducing complexity as programs grow. Just as high-level languages abstract away machine code, OOP lets you focus on <em>what</em> objects do, not <em>how</em> they do it.</p>
-<p>In fact, you’ve already been using objects all along. In Python, <em>almost everything</em> is an object. Perhaps the object you have used the most and is familiar to you are strings; python strings are objects, and you likely have used methods the string object methods like isalpha(), isdigit() and so on. </p>
-<p><em>Have you ever wondered how those methods are actually implemented under the hood? Did you actually need to know how it works under the hood?</em></p>
+<p>Notice the difference? In the OOP approach, we don’t need to know the formulas for area and perimeter - the logic for those are <em>encapsulated</em> within the object and abstracted away from us. </p>
+<p>Abstraction and encapsulation is the practice of hiding complex implementation details and exposing only what’s essential to the user. Just as high-level languages abstract away machine code, OOP lets you focus on <em>what</em> objects do, not <em>how</em> they do it. This makes code easier to read, maintain, and reuse, while reducing complexity as programs grow.</p>
+<p>In fact, you’ve already been using objects all along. In Python, <em>almost everything</em> is an object. Perhaps the object you have used the most and are familiar with are strings; python strings are objects, and you likely have used many of the string object methods like isalpha(), isdigit(), etc. </p>
+<p><em>Have you ever wondered how those methods are actually implemented under the hood? Did you actually needed to know how it works under the hood?</em></p>
 </div>
 <h2 id="creating-the-rectangle-class">Creating the <code>Rectangle</code> Class</h2>
-<p>So far, we’ve only discussed how to use a <code>Rectangle</code> class, but how do we actually create one?</p>
+<p>Now that we have seen how to use a object, let's actually create one!</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step 1: Declaration</label><label for="__tabbed_2_2">Step 2: Attributes and Constructor</label><label for="__tabbed_2_3">Step 3: Methods</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -829,7 +829,7 @@
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>   <span class="c1"># self refers to the instance being created</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>                <span class="c1"># Save the base value in the instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>                <span class="c1"># save base of the rectangle in the instance</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -837,11 +837,11 @@
 </code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">Class vs Instance</p>
-<p>Declaring a class defines the blueprint for creating objects. An instance is an actual object created from that blueprint.</p>
+<p>Declaring a class defines the blueprint for creating objects. An instance is an actual object (item) created from that blueprint.</p>
 </div>
 </div>
 <div class="tabbed-block">
-<p>Finally, we implement the methods that provide the desired behaviors for our object.</p>
+<p>Finally, we implement the methods that will provide us with desired behaviors for our object.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -878,11 +878,22 @@
 <h2 id="class-diagram">Class Diagram</h2>
 <p>To help visualize classes, we often use a class diagram. A class diagram provides a concise overview of all the attributes and methods a class contains.</p>
 <p><img alt="Class diagram for rectangle" src="../RectangleClass.png" width="300" /></p>
-<p>In the diagram above is the class diagram for <code>Rectangle</code>. It typically consists of 2 rows where:</p>
-<ul>
-<li>The first row lists the attributes and their data types.</li>
-<li>The second row lists the method signatures and their return types.</li>
-</ul>
+<p>In the diagram above is the class diagram for <code>Rectangle</code>.  A class diagram typically consists of 3 rows in following template:</p>
+<table>
+<thead>
+<tr>
+<th>ClassName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attributes: datatype</td>
+</tr>
+<tr>
+<td>method(signature): return datatype</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
 <p>Discussion questions (please discuss these with your teacher!):</p>

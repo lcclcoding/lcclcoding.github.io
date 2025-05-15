@@ -743,8 +743,8 @@
 
 
 <h1 id="unit-07-abstract-classes">Unit 07: Abstract Classes</h1>
-<p>Recall that with inheritance, we are modeling an "is-a" relationship. Abstract classes are a natural extension of inheritance — with the key difference that an abstract class relies on its child classes to implement certain methods. </p>
-<p>In other words, abstract classes and methods are just concept and idea of the things you are trying to model. </p>
+<p>Recall that with inheritance, we are modeling an "is-a" relationship. Abstract classes are a natural extension of inheritance — with the key difference that an abstract class relies on its child classes to implement certain methods.</p>
+<p>In other words, abstract classes and methods are just concepts and ideas of the things you are trying to model.</p>
 <h2 id="shapes">Shapes</h2>
 <p>Consider a <code>Rectangle</code> class and a <code>Circle</code> class:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rectangle</label><label for="__tabbed_1_2">Circle</label></div>
@@ -803,9 +803,9 @@
 </div>
 </div>
 </div>
-<p>Both classes work independently — but they share a <strong>common identity</strong>: they are both <em>shapes</em>.</p>
+<p>Both classes work independently, but they share a common identity where they are both <em>shapes</em>.</p>
 <h2 id="introducing-an-abstract-base-class">Introducing an Abstract Base Class</h2>
-<p>Let’s define a base class <code>Shape</code> that ensures all shapes must implement both <code>area()</code> and <code>perimeter()</code>:</p>
+<p>Now, perhaps we would like to enforce the fact that all shapes must implement both <code>area()</code> and <code>perimeter()</code>, we will make use of abstract class for this.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -826,7 +826,7 @@
     <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>
-<p>Now, we can make both <code>Rectangle</code> and <code>Circle</code> subclasses of <code>Shape</code>:</p>
+<p>Now, we can make both <code>Rectangle</code> and <code>Circle</code> subclasses of <code>Shape</code>,</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Rectangle</label><label for="__tabbed_2_2">Circle</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -883,12 +883,18 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="s2">&quot;I&#39;m a shape too!&quot;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;is a Shape?: </span><span class="si">{</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span><span class="w"> </span><span class="n">Shape</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Area: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Perimeter: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Shape</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Area: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Perimeter: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;You are not a shape, you imposter!&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="what-happens-if-a-method-isnt-implemented">What Happens If a Method Isn't Implemented?</h2>
 <h3 id="missing-implementation">Missing implementation</h3>
@@ -907,10 +913,10 @@
 </code></pre></div></td></tr></table></div>
 <p>Python prevents you from creating objects from incomplete subclasses.</p>
 <h3 id="instantiating-an-abstract-class">Instantiating an abstract class</h3>
-<p>Likewise, 
+<p>Likewise,</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shape</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">()</span>     <span class="c1"># a shape is a shape!</span>
 </code></pre></div></td></tr></table></div>
-will not work as well. You cannot instantiate abstract class.</p>
+<p>will not work as well. You cannot instantiate abstract class.</p>
 <hr />
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>

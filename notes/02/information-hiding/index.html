@@ -730,12 +730,12 @@
 <h1 id="unit-02-information-hiding">Unit 02: Information Hiding</h1>
 <h2 id="abstraction-layer">Abstraction Layer</h2>
 <p>Building on Unit 1, another fundamental aspect of good object-oriented design is the principle of information hiding and maintaining the abstraction layer.</p>
-<p>In Python, there are fewer restrictions are enforced compared to other OOP focused language like Java. This means it's easier to accidentally (or even intentionally) bypass the abstraction layer when working with OOP code. Hence, it's your responsibility to respect and protect this boundary.</p>
-<p>Violating the abstraction layer often leads to a phenomenon known as "spaghetti code" - code that is so tangled and interdependent that even small changes can break your entire program.</p>
+<p>In Python, there are fewer restrictions are enforced compared to other OOP focused language like Java or C++. This means it's easier to accidentally (or even intentionally) bypass the abstraction layer when working with OOP code - making it your responsibility as a programmer to respect and protect this boundary.</p>
+<p>Violating the abstraction layer often leads to a phenomenon known as "spaghetti code" where a codebase becomes so tangled and interdependent that even small changes can break your entire program.</p>
 <p><img alt="spaghetti code" src="../spaghetti.png" width="300" /></p>
 <hr />
 <h2 id="breaking-the-abstraction-layer-car-correctness">Breaking the Abstraction Layer: Car (Correctness)</h2>
-<p>To understand what it means to break an abstraction layer, let's consider the following <code>Car</code> class:</p>
+<p>To understand what it means to break an abstraction layer, let's us consider the following <code>Car</code> class:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -754,7 +754,7 @@
     <span class="k">def</span> <span class="nf">drive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">+=</span> <span class="n">distance</span>
 </code></pre></div></td></tr></table></div>
-<p>This class model a simple car driving along a 1D road. You move the car by calling the <code>drive()</code> method, which updates its position by a given distance.</p>
+<p>This class model a simple car driving along a 1D road. You can move the car by calling the <code>drive()</code> method, which updates its position by a given distance.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">✅ Correct Usage (Abstraction Maintained)</label><label for="__tabbed_1_2">❌ Broken Abstraction Layer</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -793,11 +793,11 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p>Instead of tell the car to <em>drive</em> like before, you’re essentially now stepping out of the car and <em>pushing</em> the car manually</p>
-<p>Imagine trying to drive a car, only for someone else to randomly push it from the outside! Likewise, directly changing attributes can lead to unpredictable or buggy behavior.</p>
+<p>Now, instead of tell the car to <em>drive</em> like before, you’re essentially now stepping out of the car and <em>pushing</em> the car manually.</p>
+<p>Imagine trying to drive a car, only for someone else to randomly push it from the outside! Likewise, directly changing attributes can often lead to unpredictable or buggy behavior.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Tell, Don’t Ask</p>
-<p>This example also breaks the "Tell, Don’t Ask" principle, another core OOP principle which state that we should tell object to what to do instead of asking for information and doing it ourself. </p>
+<p>This example also breaks the "Tell, Don’t Ask" principle, another core OOP principle which state that we should tell object to do something for us instead of asking for information and doing it ourself. </p>
 <ul>
 <li>✅ Correct: <code>car.drive(10)</code> → You instruct the car itself to move.</li>
 <li>❌ Incorrect: <code>car.position = car.position + 10</code> → You ask for the car’s position and change it manually.</li>
@@ -808,7 +808,7 @@
 </div>
 <hr />
 <h2 id="breaking-the-abstraction-layer-rectangle-maintainability">Breaking the Abstraction Layer: Rectangle (Maintainability)</h2>
-<p>Preserving the abstraction layer also makes your code easier to maintain and refactor if you like to make changes to it in the future. </p>
+<p>Apart from correctnesss, preserving the abstraction layer also makes your code easier to maintain and refactor if you like to make changes to it in the future.</p>
 <p>Let’s revisit the <code>Rectangle</code> class from Unit 01:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -830,7 +830,7 @@
     <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">2</span>
 </code></pre></div></td></tr></table></div>
-<p>Suppose that you initially calculated area and perimeter by accessing the class fields directly and broken the abstraction layer:</p>
+<p>Suppose that you initially calculated area and perimeter by accessing the class fields directly and hence broken the abstraction layer:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Broken abstraction layer</label><label for="__tabbed_2_2">Original Code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -855,7 +855,7 @@
 </div>
 </div>
 </div>
-<p>Later, you might decide to represent a rectangle using its <code>base</code> and <code>area</code> instead of <code>height</code>. After all, only two of the three (base, height, area) are needed to compute the third - making this redesign valid.</p>
+<p>Later on, you might decide to represent a rectangle using its <code>base</code> and <code>area</code> instead of <code>height</code>. After all, only two of the three (base, height, area) are needed to compute the third - making this redesign valid.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">New Class</label><label for="__tabbed_3_2">Original Class</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -904,7 +904,7 @@
 </div>
 </div>
 </div>
-<p>If you previously accessed fields directly, your main program will break after this internal change:</p>
+<p>However, if you previously accessed fields directly and broken the abstraction layer, your main program will also break after this internal change to the <code>Rectangle</code> class:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -913,7 +913,8 @@
     <span class="n">area</span> <span class="o">=</span> <span class="n">rect1</span><span class="o">.</span><span class="n">base</span> <span class="o">*</span> <span class="n">rect1</span><span class="o">.</span><span class="n">height</span>                <span class="c1"># ❌ Broken</span>
     <span class="n">perimeter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">rect1</span><span class="o">.</span><span class="n">base</span> <span class="o">+</span> <span class="n">rect1</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>     <span class="c1"># ❌ Broken</span>
 </code></pre></div></td></tr></table></div>
-<p>The <code>height</code> attribute no longer exists, so these lines now cause errors. Whereas compared to using the class’s methods (the abstraction layer), your code continues to work even after the internal changes to your class!</p>
+<p>Now, the <code>height</code> attribute no longer exists, so these lines now cause errors.</p>
+<p>Whereas if the we used the class’s methods (the abstraction layer), your code continues to work even after the internal changes to your class!</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -923,9 +924,9 @@
     <span class="n">perimeter</span> <span class="o">=</span> <span class="n">rect1</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span>                   <span class="c1"># ✅ Still works</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="underscore-_-in-python">Underscore _ in Python</h2>
-<p>To help preserve information hiding, Python provides a naming convention using the underscore (_) prefix to signal that a class attribute or method is meant for internal use only. </p>
+<p>To help preserve information hiding, Python provides a naming convention using the underscore (_) prefix to signal that a class attribute or method is meant for internal use only.</p>
 <p>While Python doesn't enforce access restrictions like private or protected keywords in other languages (e.g., Java or C++), the underscore acts as a convention that you - as programmers - should respect.</p>
-<p>Let’s revise our earlier Car and Rectangle classes to follow this convention:</p>
+<p>Let’s revise our earlier <code>Car</code> and <code>Rectangle</code> classes to follow this convention:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Revised Rectangle Class</label><label for="__tabbed_4_2">Revised Car Class</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -950,7 +951,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">*</span> <span class="mi">2</span>
 </code></pre></div></td></tr></table></div>
 We’ve marked _base and _height as internal attributes, which means any calculations or logic outside this class should go through its public methods like area() or perimeter().</p>
-<p>Note that in the class diagram the <code>+</code> sign is also flipped to <code>-</code> to indicate that it is a private/internal field.</p>
+<p>Note that in the class diagram the <code>+</code> (public) sign is also flipped to <code>-</code> to indicate that it is a private/internal field.</p>
 <p><img alt="Private Rectangle" src="../PrivateRectangle.png" width="300" /></p>
 </div>
 <div class="tabbed-block">
@@ -978,11 +979,11 @@ Likewise, _position is marked as internal. You’re signaling to others (and to 
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Using underscore naming convention</p>
-<p>Starting now, ALL of your attribute in your class should be internal by default. You almost should never even use public attributes.</p>
+<p>Starting now, ALL of your attribute in your class should be internal by default. You will almost never need to use public attributes.</p>
 </div>
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
-<p>Discussion questions (please discuss this with your teaching assistant!)</p>
+<p>Discussion questions (please discuss this with your teacher!)</p>
 <ol>
 <li>What is the difference between accessing an attribute directly vs using a method? Why might direct access lead to problems in larger programs?</li>
 <li>Consider the principle <em>“Tell, Don’t Ask.”</em> Why might this lead to better object-oriented code?</li>

@@ -744,10 +744,10 @@
 
 <h1 id="unit-03-composition">Unit 03: Composition</h1>
 <h2 id="car">Car</h2>
-<p>In Object-Oriented Programming (OOP), composition is another fundamental design principle whereby we construct objects from other objects. This allows you to build complex systems flexibly, by combining simpler, well-defined components. </p>
-<p>To illustrate composition, let’s build on our car example from Unit 02</p>
+<p>Composition is yet another fundamental design principle whereby we compose objects with objects. This allows you to build complex systems flexibly, by combining simpler and smaller well-defined components.</p>
+<p>To illustrate composition, we'll build on from our car example from Unit 0.2</p>
 <h3 id="separate-classes-for-engine-and-brake">Separate Classes for Engine and Brake</h3>
-<p>A real car <strong>has an</strong> engine system and <strong>has a</strong> brake system. Instead of bundling these directly into the <code>Car</code>, we can create distinct classes for each. </p>
+<p>Every real car <strong>has an</strong> engine system and <strong>has a</strong> brake system. Hence, instead of bundling these directly into the <code>Car</code>, we can create distinct classes for each system.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Engine</label><label for="__tabbed_1_2">Brake</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -831,7 +831,7 @@
 </div>
 </div>
 <h3 id="composing-engine-and-brake-in-car">Composing Engine and Brake in Car</h3>
-<p>By using the <code>Engine</code> and <code>Brake</code> objects inside the new <code>Car</code> class, we achieved composition:</p>
+<p>By using the <code>Engine</code> and <code>Brake</code> objects to create the new <code>Car</code> class, we achieved composition. The logic for the <code>Brake</code> and <code>Engine</code> are encapsulated within their respectively classes. In other words, the systems are separate from each other.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -899,8 +899,8 @@
 <p><img alt="class diagram" src="../CarClass.png" /></p>
 <p>The diamond-shaped arrows represents a 'has-a' relationship between objects</p>
 <h2 id="dangers-of-composition-references-aliasing">Dangers of Composition: References / Aliasing</h2>
-<p>As objects in python are reference types, a possible danger with composition in Python come with aliasing that may lead to unintended side effect. </p>
-<p>Study the code below. What do you expect to happen here and why? (<em>hint:</em> a line will throw an error) </p>
+<p>One danger when it comes to using composition is due to aliasing. As all objects in python are reference types, improperly managed aliasing may lead to unintended side effect.</p>
+<p>Study the code below. What do you expect to happen here and why? (<em>hint:</em> a line will throw an error)</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Example</label><label for="__tabbed_2_2">Answer: Part 1</label><label for="__tabbed_2_3">Answer: Part 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -958,7 +958,7 @@
 </span>
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<p>The above example, we only created one engine object which both object are referencing. In other words, both cars are sharing one engine.</p>
+<p>The above example, we only created one engine object which both object are referencing. In other words, both cars sharing a reference to one engine.</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -972,9 +972,14 @@
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
 <p>Thus, when <code>car1.stop()</code> is called, it shuts down the shared engine. So, even though you're calling <code>car2.drive(0.3)</code> next, the engine is already stopped-triggering an exception.</p>
-<div class="admonition danger">
+<div class="admonition bug">
 <p class="admonition-title">Unintended side effects</p>
-<p>When you pass objects in Python, you are passing references to the actual objects and not creating copies (unlike with primitive types like <code>int</code>, <code>float</code>, or <code>str</code>). Always be mindful of this, especially when composing objects as sharing objects (aliasing) can have unintended side effects if not managed carefully!</p>
+<p>When you pass objects in Python, you are passing references to the actual objects and not creating copies (unlike with primitive types like <code>int</code>, <code>float</code>). Always be mindful of this, especially when composing objects as sharing objects (aliasing) can have unintended side effects if not managed carefully!</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Immutable classes</p>
+<p>A possible way to safely manage this side effect is through the use of immutable classes. In other words, once the class is created all the attribute will never changes. </p>
+<p>A example of immutable class is python <code>str</code> class which will not change once it is created. Furthermore all methods (i.e slicing, replace, ...) of a str will always return a brand new str object rather then modifying the object. This immutability allows strings object to be safely passed around and shared without side effects.</p>
 </div>
 </div>
 </div>

@@ -755,7 +755,7 @@
 <p>In Unit 03, we looked at how we can build complex classes using composition — that is, combining smaller classes together to model a has-a relationship. Now, we’ll look at how to model an <strong>is-a</strong> relationship between classes using inheritance!</p>
 <h2 id="square-rectangle">Square &amp; Rectangle</h2>
 <h3 id="creating-a-square">Creating a Square</h3>
-<p>Suppose we want to create a new class called Square. We might start off implementing it like this:</p>
+<p>Diving in, suppose we want to create a new class called <code>Square</code>. We might start off implementing it like this:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -794,11 +794,11 @@
     <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>Looks familiar, right? It’s basically the exact same code as our Rectangle class from Unit 01. That’s because a square is really just a special case of a rectangle — it’s a rectangle where the base and height are equal. So we can say that a Square is a Rectangle — it’s a subset of rectangles.</p>
-<p>In other words, a Square <strong>is-a</strong> Rectangle.</p>
+<p>Looks familiar, right? It’s basically the exact same code as our Rectangle class from Unit 01. That’s because a square is really just a special case of a rectangle where the base and height are equal.</p>
+<p>In other words, a square is a subset all rectangles</p>
 <p><img alt="venn diagrams of quadrilaterals" src="../quadrilaterals.png" width="300" /></p>
 <h3 id="inheriting-a-rectangle">Inheriting a Rectangle</h3>
-<p>Instead of rewriting all of Rectangle’s code in Square, we can use inheritance to reuse it:</p>
+<p>Thus, instead of rewriting all of <code>Rectangle</code> code in <code>Square</code>, we will make use of inheritance to reuse it:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">New Square</label><label for="__tabbed_1_2">Rectangle</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -814,10 +814,9 @@
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
 </code></pre></div></td></tr></table></div>
-<p>Just like that, we're done! Square now has access to all the methods in Rectangle, automatically.</p>
+<p>Just like that, we're done! <code>Square</code> now has access to all the methods in <code>Rectangle</code>, automatically. Now we can say that <code>Square</code> is a subclass of <code>Rectangle</code> — or using the parent-child terminology, <code>Square</code> is the child and <code>Rectangle</code> is the parent. Or even, the <code>Square</code> extends <code>Rectangle</code>.</p>
 <p>The class diagram for this looks like:</p>
 <p><img alt="class diagram for square" src="../square.png" width="300" /></p>
-<p>Now we can say that Square is a subclass of Rectangle — or using the parent-child terminology, Square is the child and Rectangle is the parent. Or the Square extends Rectangle.</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -862,7 +861,7 @@
 </div>
 </div>
 <h2 id="method-overriding">Method Overriding</h2>
-<p>You might’ve noticed that we defined a <code>__str__</code> method again inside our Square class. That’s called method overriding.</p>
+<p>You might’ve noticed that we defined a <code>__str__</code> method again inside our Square class.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -875,11 +874,11 @@
 <span class="hll">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span class="hll">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_base</span><span class="p">()</span><span class="si">}</span><span class="s2"> length&quot;</span>
 </span></code></pre></div></td></tr></table></div>
-<p>We are replacing the <code>__str__</code> method from Rectangle with a new version specific to Square.</p>
+<p>What is happening here is called method overriding, we are replacing the <code>__str__</code> method from <code>Rectangle</code> with a new version specific to <code>Square</code>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Without <code>__str__</code> method</label><label for="__tabbed_2_2">With <code>__str__</code> method</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>If we didn’t define the <code>__str__</code> method in Square:</p>
+<p>If we didn’t define the <code>__str__</code> method in <code>Square</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>
@@ -894,10 +893,10 @@
 <p>Would give us:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Rectangle with 5 base and 5 height
 </code></pre></div></td></tr></table></div>
-<p>This happens because Square didn't define its own <code>__str__</code>, so it just uses the one it inherited from Rectangle.</p>
+<p>This happens because <code>Square</code> didn't define its own <code>__str__</code>, so it just uses the one it inherited from Rectangle.</p>
 </div>
 <div class="tabbed-block">
-<p>But if we do define <code>__str__</code> in Square:</p>
+<p>But if we do define <code>__str__</code> in <code>Square</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -918,19 +917,19 @@
 <p>Will now give us:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Square with 5 length
 </code></pre></div></td></tr></table></div>
-<p>Here, we’ve overridden the <code>__str__</code> method from Rectangle with a new one tailored for Square.</p>
+<p>Here, we’ve overridden the <code>__str__</code> method from <code>Rectangle</code> with a new one tailored for <code>Square</code>.</p>
 </div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Method Resolution Order (MRO)</p>
 <p>When you call a method on an object, Python doesn’t just randomly guess which method it should call. Python will follows a rule called the Method Resolution Order (MRO).</p>
-<p>Python first checks the child class (like Square). If the method exists there, it uses it. If not, it "moves up" to the parent (like Rectangle) and checks there and so on. So in our case, Python sees that Square has a <code>__str__</code> method in Square, and uses it. If it didn’t, it would use the one from Rectangle.</p>
+<p>Python first checks the child class (like <code>Square</code>). If the method exists there, it uses it. If not, it "moves up" to the parent (like <code>Rectangle</code>) and checks there and so on. So in our case, Python sees that <code>Square</code> has a <code>__str__</code> method in <code>Square</code>, and uses it. If it didn’t, it would use the one from <code>Rectangle</code>.</p>
 <p>Note: Unlike other languages, python doesn’t care how many arguments the method takes — it only checks the method name to decide if the method is overridden. If a child and parent both have a method with the same name, the child’s version always takes priority.</p>
 </div>
 <h2 id="adding-methods-to-subclasses">Adding Methods to Subclasses</h2>
 <p>On top of just inheriting methods and attributes from our parent class, we can also define new methods in the child class to extend or specialize its behavior.</p>
-<p>Let’s go back to our Rectangle and Square example. Suppose we want the Square class to have a method that tells us whether another square can fit inside a given area. That’s something specific to squares — our Rectangle class doesn’t need to know about it. We can add that method directly in Square:</p>
+<p>Let’s go back to our <code>Rectangle</code> and Square example. Suppose we want the Square class to have a method that tells us whether another square can fit inside a given area. That’s something specific to squares — our <code>Rectangle</code> class doesn’t need to know about it. We can add that method directly in Square:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -955,11 +954,12 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">area</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p>The new <code>can_fit</code> method is only available on Square, not Rectangle — and that’s fine! That’s the power of subclassing: we can start with shared behavior and add specific features when needed.</p>
+<p>This new <code>can_fit</code> method is only available on <code>Square</code>, not <code>Rectangle</code>. This show the  power of subclassing: we can start with shared behavior and add specific features when needed.</p>
 <p><img alt="square2 png" src="../square2.png" width="300" /></p>
 <h2 id="negative-example-when-not-to-use-inheritance">Negative example: When NOT to Use Inheritance</h2>
-<p>We’ve learned that Square can inherit from Rectangle, because a square is a special kind of rectangle. That’s an example of inheritance being used correctly — it makes sense. But not everything that shares some features should be related by inheritance. </p>
-<p>Let’s look at a case where inheritance goes wrong. Let say we want our library to have a name attribute. So we see that book class has the _name attribute, we will make the library inherit it! </p>
+<p>We’ve learned that <code>Square</code> can inherit from <code>Rectangle</code>, because a square is a special kind of rectangle. That’s an example of inheritance being used correctly — it makes sense. But not everything that shares some features should be related by inheritance.</p>
+<p>Let’s look at a case where inheritance goes wrong with a flawed reasoning.</p>
+<p>Say we want our library to have a <code>name</code> attribute, then we also see that book class has the <code>name</code> attribute, and we recall that inheritance allow us to copy the attribute over to the subclass, we will make the library inherit from book!</p>
 <p>Imagine someone wrote the following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -977,7 +977,8 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_books</span> <span class="o">=</span> <span class="n">books</span>
 </code></pre></div></td></tr></table></div>
-<p>This looks like Library is a kind of Book. But that doesn’t really make sense — a library isn’t a book, it just has books. But later in the code, say we have a function that read a book:</p>
+<p>This looks like <code>Library</code> is a kind of <code>Book</code>. But that doesn’t really make sense! A library isn’t a book, it just has books.</p>
+<p>To see why is may become a problem, let say we have a function that read a book:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -994,7 +995,7 @@
 
 <span class="n">read</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>  <span class="c1"># Wait — we’re reading a library?! but our code is still working even tho we a check to ensure that we only can read books!</span>
 </code></pre></div></td></tr></table></div>
-<p>That is not right. A library isn’t something you read — it contains things you read. This is an example of using inheritance just to “reuse” the name variable from Book. But it’s the wrong relationship. A library has books. It is NOT a book.</p>
+<p>Even though we did a check for with <code>isinstance(book, Book)</code>, no error will occur because based on what we created earlier, we told Python that <code>Library</code> is special kind of <code>Book</code>. This is an example of using inheritance just to “reuse” the name variable from <code>Book</code>. But it’s the wrong relationship. A library has books. It is NOT a book.</p>
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
 <p>Discussion questions (please discuss this with your teacher!)</p>

@@ -767,11 +767,10 @@
 
 
 <h1 id="unit-04-class-fields-and-methods">Unit 04: Class Fields and Methods</h1>
-<p>Using the <code>Rectangle</code> class from Unit 01, this unit will introduce you to the difference between instance and class variables, as well as instance and class methods.</p>
+<p>This unit will introduce you to the difference between instance and class variables/methods</p>
 <h2 id="variables">Variables</h2>
-<p>In this section we will look the difference between instance and class variables </p>
 <h3 id="instance-variables">Instance Variables</h3>
-<p>As a recap, <strong>instance variables</strong> are used to store data unique to each object. They are defined with <code>self</code> inside the <code>__init__</code> constructor and belong to each specific instance of a class.</p>
+<p>As a recap, <strong>instance variables</strong> are used to store data unique to each object. They are defined with <code>self</code> inside the <code>__init__</code> constructor and belong to each specific instance of a class. Using the <code>Rectangle</code> class from Unit 01, we can see that the <code>Rectangle</code> class has 2 instance variables: base and height</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -812,7 +811,6 @@
 <p>No matter how many <code>Rectangle</code> objects you create, both <code>SIDES</code> and <code>count</code> are shared and accessible from every instance and through the class itself.</p>
 <hr />
 <h2 id="methods">Methods</h2>
-<p>In this section we will look the difference between instance and class methods. </p>
 <h3 id="instance-methods">Instance Methods</h3>
 <p>Like instance variables, <strong>instance methods</strong> operate on individual objects and can access or modify instance variables. In Python, they always take <code>self</code> as their first parameter.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -828,7 +826,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">base</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
 
-    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                     <span class="c1"># instance method</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                         <span class="c1"># instance method</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
 
     <span class="o">...</span>
