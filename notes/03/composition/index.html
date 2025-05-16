@@ -726,6 +726,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../proj/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pokemon Simulator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -742,13 +810,13 @@
 
 
 
-<h1 id="unit-03-composition">Unit 03: Composition</h1>
+<div><h1 id="unit-03-composition">Unit 03: Composition</h1>
 <h2 id="car">Car</h2>
 <p>Composition is yet another fundamental design principle whereby we compose objects with objects. This allows you to build complex systems flexibly, by combining simpler and smaller well-defined components.</p>
 <p>To illustrate composition, we'll build on from our car example from Unit 0.2</p>
 <h3 id="separate-classes-for-engine-and-brake">Separate Classes for Engine and Brake</h3>
 <p>Every real car <strong>has an</strong> engine system and <strong>has a</strong> brake system. Hence, instead of bundling these directly into the <code>Car</code>, we can create distinct classes for each system.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Engine</label><label for="__tabbed_1_2">Brake</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Engine</label><label for="__tabbed_1_2">Brake</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The <code>Engine</code> class models an engine that can be started or stopped, and calculates acceleration based on how much you press the pedal.</p>
@@ -791,10 +859,10 @@
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paddle_ratio</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">paddle_ratio</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Paddle ratio must be between 0 and 1.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"Paddle ratio must be between 0 and 1."</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_running</span><span class="p">()</span> <span class="ow">and</span> <span class="n">paddle_ratio</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The engine cannot accelerate when it is stopped.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"The engine cannot accelerate when it is stopped."</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_acceleration</span> <span class="o">*</span> <span class="n">paddle_ratio</span>
 </code></pre></div></td></tr></table></div>
@@ -821,7 +889,7 @@
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paddle_ratio</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">paddle_ratio</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Paddle ratio must be between 0 and 1.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"Paddle ratio must be between 0 and 1."</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_wear</span> <span class="o">+=</span> <span class="mf">0.00001</span> <span class="o">*</span> <span class="n">paddle_ratio</span>    
         <span class="c1"># Braking effect reduces as wear increases, and is always negative (slows the car)</span>
@@ -896,12 +964,12 @@
 </code></pre></div></td></tr></table></div>
 <h3 id="class-diagram">Class Diagram</h3>
 <p>The class diagram for the <code>Car</code> class looks like this:</p>
-<p><img alt="class diagram" src="../CarClass.png" /></p>
+<p><img alt="class diagram" src="../CarClass.png"></p>
 <p>The diamond-shaped arrows represents a 'has-a' relationship between objects</p>
 <h2 id="dangers-of-composition-references-aliasing">Dangers of Composition: References / Aliasing</h2>
 <p>One danger when it comes to using composition is due to aliasing. As all objects in python are reference types, improperly managed aliasing may lead to unintended side effect.</p>
 <p>Study the code below. What do you expect to happen here and why? (<em>hint:</em> a line will throw an error)</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Example</label><label for="__tabbed_2_2">Answer: Part 1</label><label for="__tabbed_2_3">Answer: Part 2</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Example</label><label for="__tabbed_2_2">Answer: Part 1</label><label for="__tabbed_2_3">Answer: Part 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -968,7 +1036,7 @@
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="o">...</span>
     <span class="n">car1</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>          <span class="c1"># Stops the engine for BOTH car1 and car2</span>
-    <span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>      <span class="c1"># This will raise an Exception: &quot;The engine cannot accelerate when it is stopped&quot;</span>
+    <span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>      <span class="c1"># This will raise an Exception: "The engine cannot accelerate when it is stopped"</span>
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
 <p>Thus, when <code>car1.stop()</code> is called, it shuts down the shared engine. So, even though you're calling <code>car2.drive(0.3)</code> next, the engine is already stopped-triggering an exception.</p>
@@ -993,7 +1061,7 @@
 <li>Why is _accelerate() marked with an underscore in the Car class? Should you call it from outside the class? Why or why not?</li>
 </ol>
 </div>
-<p><a href="../../../exercises/03/ex03/">Jump to exercise 03</a></p>
+<p><a href="../../../exercises/03/ex03/">Jump to exercise 03</a></p></div>
 
 
 

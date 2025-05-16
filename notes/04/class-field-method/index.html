@@ -750,6 +750,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../proj/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pokemon Simulator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -766,7 +834,7 @@
 
 
 
-<h1 id="unit-04-class-fields-and-methods">Unit 04: Class Fields and Methods</h1>
+<div><h1 id="unit-04-class-fields-and-methods">Unit 04: Class Fields and Methods</h1>
 <p>This unit will introduce you to the difference between instance and class variables/methods</p>
 <h2 id="variables">Variables</h2>
 <h3 id="instance-variables">Instance Variables</h3>
@@ -784,7 +852,7 @@
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
 <p>Every <code>Rectangle</code> object instance has its own <code>base</code> and <code>height</code>, so changes to one object’s instance variables won’t affect others.</p>
-<hr />
+<hr>
 <h3 id="class-variables">Class Variables</h3>
 <p>In contrast, <strong>class variables</strong> are shared among all instances of a class. They are typically used for properties that should be consistent for every object, or to keep track of class-level information.</p>
 <p>For example, all rectangles have four sides, and you may want to count how many rectangles have been created:</p>
@@ -809,7 +877,7 @@
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
 <p>No matter how many <code>Rectangle</code> objects you create, both <code>SIDES</code> and <code>count</code> are shared and accessible from every instance and through the class itself.</p>
-<hr />
+<hr>
 <h2 id="methods">Methods</h2>
 <h3 id="instance-methods">Instance Methods</h3>
 <p>Like instance variables, <strong>instance methods</strong> operate on individual objects and can access or modify instance variables. In Python, they always take <code>self</code> as their first parameter.</p>
@@ -831,7 +899,7 @@
 
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<hr />
+<hr>
 <h3 id="class-methods">Class Methods</h3>
 <p>Similarly, <strong>class methods</strong> are used for operations that affect the class as a whole, not specific instances. They are defined with the <code>@classmethod</code> decorator and take <code>cls</code> as their first parameter.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -860,7 +928,7 @@
 <p class="admonition-title">Limited Access</p>
 <p>Class methods cannot access instance variables (since they don’t have access to <code>self</code>), but can access class variables and other class methods.</p>
 </div>
-<hr />
+<hr>
 <h2 id="summary">Summary</h2>
 <div class="admonition note">
 <p class="admonition-title">Summary Table</p>
@@ -911,7 +979,7 @@
 </tbody>
 </table>
 </div>
-<hr />
+<hr>
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
 <p>Discussion questions (please discuss this with your teacher!)</p>
@@ -920,7 +988,7 @@
 <li>When do we use class methods/variables?</li>
 </ol>
 </div>
-<p><a href="../../../exercises/04/ex04/">Jump to exercise 04</a></p>
+<p><a href="../../../exercises/04/ex04/">Jump to exercise 04</a></p></div>
 
 
 

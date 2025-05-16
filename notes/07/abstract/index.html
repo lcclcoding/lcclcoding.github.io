@@ -726,6 +726,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../proj/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pokemon Simulator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -742,12 +810,12 @@
 
 
 
-<h1 id="unit-07-abstract-classes">Unit 07: Abstract Classes</h1>
+<div><h1 id="unit-07-abstract-classes">Unit 07: Abstract Classes</h1>
 <p>Recall that with inheritance, we are modeling an "is-a" relationship. Abstract classes are a natural extension of inheritance — with the key difference that an abstract class relies on its child classes to implement certain methods.</p>
 <p>In other words, abstract classes and methods are just concepts and ideas of the things you are trying to model.</p>
 <h2 id="shapes">Shapes</h2>
 <p>Consider a <code>Rectangle</code> class and a <code>Circle</code> class:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rectangle</label><label for="__tabbed_1_2">Circle</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Rectangle</label><label for="__tabbed_1_2">Circle</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -827,7 +895,7 @@
         <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>
 <p>Now, we can make both <code>Rectangle</code> and <code>Circle</code> subclasses of <code>Shape</code>,</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Rectangle</label><label for="__tabbed_2_2">Circle</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Rectangle</label><label for="__tabbed_2_2">Circle</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -886,15 +954,15 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="s2">&quot;I&#39;m a shape too!&quot;</span><span class="p">]</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="s2">"I'm a shape too!"</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Shape</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Area: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Perimeter: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Area: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Perimeter: </span><span class="si">{</span><span class="n">shape</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;You are not a shape, you imposter!&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'You are not a shape, you imposter!'</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="what-happens-if-a-method-isnt-implemented">What Happens If a Method Isn't Implemented?</h2>
 <h3 id="missing-implementation">Missing implementation</h3>
@@ -909,7 +977,7 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shape</span> <span class="o">=</span> <span class="n">IncompleteShape</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>Raises a <code>TypeError</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>TypeError: Can&#39;t instantiate abstract class IncompleteShape with abstract method perimeter
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>TypeError: Can't instantiate abstract class IncompleteShape with abstract method perimeter
 </code></pre></div></td></tr></table></div>
 <p>Python prevents you from creating objects from incomplete subclasses.</p>
 <h3 id="instantiating-an-abstract-class">Instantiating an abstract class</h3>
@@ -917,7 +985,7 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">shape</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">()</span>     <span class="c1"># a shape is a shape!</span>
 </code></pre></div></td></tr></table></div>
 <p>will not work as well. You cannot instantiate abstract class.</p>
-<hr />
+<hr>
 <div class="admonition question">
 <p class="admonition-title">Discussion</p>
 <p>Discussion questions (please discuss these with your teacher!):</p>
@@ -927,8 +995,8 @@
 <li>What happens if a subclass does not implement all of the abstract methods required by its abstract base class? Why is this behavior important? (hint: it a form of guarantee (confirm + chop))</li>
 </ol>
 </div>
-<hr />
-<p><a href="../../../exercises/07/ex07/">Jump to exercise 07</a></p>
+<hr>
+<p><a href="../../../exercises/07/ex07/">Jump to exercise 07</a></p></div>
 
 
 

@@ -726,6 +726,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../proj/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pokemon Simulator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -742,10 +810,10 @@
 
 
 
-<h1 id="unit-01-basics">Unit 01: Basics</h1>
+<div><h1 id="unit-01-basics">Unit 01: Basics</h1>
 <h2 id="the-3-rectangles-problem">The 3 Rectangles Problem</h2>
 <p>Let’s dive right in with an example. Suppose we have three rectangles as shown in the figure below and we would like to find the area and perimeter of each rectangle.</p>
-<p><img alt="Image of 3 rectangle" src="../Rectangles.png" /></p>
+<p><img alt="Image of 3 rectangle" src="../Rectangles.png"></p>
 <h3 id="the-naive-approach">The Naive Approach</h3>
 <p>A straightforward approach to this problem is to represent each rectangle as a tuple containing its base and height, and store these tuples in a list. To compute the area and perimeter of each rectangle, we extract the base and height from each tuple and apply the following formulas:</p>
 <ul>
@@ -768,11 +836,11 @@
     <span class="n">area</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span>
     <span class="n">perimeter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">height</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rectangle </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: Area = </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">, Perimeter = </span><span class="si">{</span><span class="n">perimeter</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Rectangle </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: Area = </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">, Perimeter = </span><span class="si">{</span><span class="n">perimeter</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="the-oop-approach">The OOP Approach</h3>
 <p>Now, let's see how using objects can simplify this problem!</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Step 1: Create</label><label for="__tabbed_1_2">Step 2: Ask</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Step 1: Create</label><label for="__tabbed_1_2">Step 2: Ask</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Instead of using tuples, we create instances of a <code>Rectangle</code> class.</p>
@@ -795,7 +863,7 @@
 <span class="hll">    <span class="n">area</span> <span class="o">=</span> <span class="n">rect</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>
 </span><span class="hll">    <span class="n">perimeter</span> <span class="o">=</span> <span class="n">rect</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span>
 </span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rectangle </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: Area = </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">, Perimeter = </span><span class="si">{</span><span class="n">perimeter</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Rectangle </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: Area = </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">, Perimeter = </span><span class="si">{</span><span class="n">perimeter</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -809,7 +877,7 @@
 </div>
 <h2 id="creating-the-rectangle-class">Creating the <code>Rectangle</code> Class</h2>
 <p>Now that we have seen how to use a object, let's actually create one!</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step 1: Declaration</label><label for="__tabbed_2_2">Step 2: Attributes and Constructor</label><label for="__tabbed_2_3">Step 3: Methods</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Step 1: Declaration</label><label for="__tabbed_2_2">Step 2: Attributes and Constructor</label><label for="__tabbed_2_3">Step 3: Methods</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>We start by declaring the class we want to create.</p>
@@ -832,7 +900,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>                <span class="c1"># save base of the rectangle in the instance</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
     <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># Creating a rectangle instance: this internally calls Rectangle.__init__(10, 5)</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition tip">
@@ -867,7 +935,7 @@
     <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
     <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
     <span class="n">rect1</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>                <span class="c1"># returns 50</span>
     <span class="n">rect1</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span>           <span class="c1"># returns 30</span>
@@ -877,7 +945,7 @@
 </div>
 <h2 id="class-diagram">Class Diagram</h2>
 <p>To help visualize classes, we often use a class diagram. A class diagram provides a concise overview of all the attributes and methods a class contains.</p>
-<p><img alt="Class diagram for rectangle" src="../RectangleClass.png" width="300" /></p>
+<p><img alt="Class diagram for rectangle" src="../RectangleClass.png" width="300"></p>
 <p>In the diagram above is the class diagram for <code>Rectangle</code>.  A class diagram typically consists of 3 rows in following template:</p>
 <table>
 <thead>
@@ -909,7 +977,7 @@
 </li>
 </ol>
 </div>
-<p><a href="../../../exercises/01/ex01/">Jump to exercise 01</a></p>
+<p><a href="../../../exercises/01/ex01/">Jump to exercise 01</a></p></div>
 
 
 
