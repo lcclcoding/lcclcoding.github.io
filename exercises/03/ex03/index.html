@@ -883,7 +883,7 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10.</p
 </ul>
 <p><strong>Methods</strong>:</p>
 <ul>
-<li><code>distance_to(other)</code>: Returns the Euclidean distance between this point and another <code>Point</code> object. Raise a ValueError if the object is not another <code>Point</code> object (<em>hint: use the <code>isinstance(...)</code> function</em>)</li>
+<li><code>distance_to(other)</code>: Returns the Euclidean distance between this point and another <code>Point</code> object. Raise a TypeError if the object is not another <code>Point</code> object (<em>hint: use the <code>isinstance(...)</code> function</em>)</li>
 <li><code>__str__</code>: Returns a string representation in the format <code>(x, y)</code>.</li>
 </ul>
 <h3 id="__eq__-method"><code>__eq__</code> method</h3>
@@ -910,10 +910,10 @@ Above is an image of a circle with the circle point (0,0) and a radius of 10.</p
 </code></pre></div></td></tr></table></div>
 <p>will return true.</p>
 <h4 id="your-task">Your task</h4>
-<p>Research on the <code>__eq__</code> method and implement it such that we can compare different <code>Point</code> objects using the == operator.</p>
+<p>Research on the <code>__eq__</code> method and implement it such that we can compare different <code>Point</code> objects using the == operator. Raise a TypeError if the object is not a point</p>
 <hr>
 <h2 id="task-3-design-the-circle-class-using-composition">Task 3: Design the <code>Circle</code> Class Using Composition</h2>
-<p>Redesign your <code>Circle</code> class from Exercise 1 to utilize <strong>composition</strong> by including a <code>Point</code> object as its center. Implement another a method such we are able to find the distance between 2 circle. Raise a ValueError if the object is not a circle</p>
+<p>Redesign your <code>Circle</code> class from Exercise 1 to utilize <strong>composition</strong> by including a <code>Point</code> object as its center. Implement another a method such we are able to find the distance between 2 circle. Raise a TypeError if the object is not a circle</p>
 <p><img alt="alt text" src="../circle-distance.png"></p>
 <p>Note: If the circle is overlapping you should return zero.</p></div>
 
