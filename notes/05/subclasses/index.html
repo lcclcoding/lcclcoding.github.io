@@ -447,6 +447,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Method Overriding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-__str__" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: __str__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-overriding-example-person-teacher-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      More overriding example: Person, Teacher, Students
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -512,6 +536,29 @@
   
   <span class="md-ellipsis">
     07. Abstract Classes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08/extras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08. Extras - LSP
     
   </span>
   
@@ -929,6 +976,7 @@
 </div>
 </div>
 <h2 id="method-overriding">Method Overriding</h2>
+<h3 id="example-1-__str__">Example 1: <code>__str__</code></h3>
 <p>You might’ve noticed that we defined a <code>__str__</code> method again inside our Square class.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -995,6 +1043,55 @@
 <p>Python first checks the child class (like <code>Square</code>). If the method exists there, it uses it. If not, it "moves up" to the parent (like <code>Rectangle</code>) and checks there and so on. So in our case, Python sees that <code>Square</code> has a <code>__str__</code> method in <code>Square</code>, and uses it. If it didn’t, it would use the one from <code>Rectangle</code>.</p>
 <p>Note: Unlike other languages, python doesn’t care how many arguments the method takes — it only checks the method name to decide if the method is overridden. If a child and parent both have a method with the same name, the child’s version always takes priority.</p>
 </div>
+<h3 id="more-overriding-example-person-teacher-students">More overriding example: Person, Teacher, Students</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hello, I'm </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Teacher</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">subjects</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_subjects</span> <span class="o">=</span> <span class="n">subjects</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>  <span class="c1"># Call parent method</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"I teach </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_subjects</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">subjects</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_subjects</span> <span class="o">=</span> <span class="n">subjects</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>  <span class="c1"># Call parent method</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"I study </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_subjects</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="adding-methods-to-subclasses">Adding Methods to Subclasses</h2>
 <p>On top of just inheriting methods and attributes from our parent class, we can also define new methods in the child class to extend or specialize its behavior.</p>
 <p>Let’s go back to our <code>Rectangle</code> and Square example. Suppose we want the Square class to have a method that tells us whether another square can fit inside a given area. That’s something specific to squares — our <code>Rectangle</code> class doesn’t need to know about it. We can add that method directly in Square:</p>
