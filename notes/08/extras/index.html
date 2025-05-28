@@ -483,6 +483,36 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Liskov Substitution Principle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      More examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#birds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Birds
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -816,107 +846,64 @@
 <p>That a very big problem, the method does not do what it claims to do. First of all it is not random. Secondly, it returns a negative number not within 0-100.</p>
 <p>Now suppose you saw <code>RNG</code> class and saw that <code>TrustMeRNG</code> inherits from <code>RNG</code>. You expect it to behave in the same way as the <code>RNG</code> class and you decided to use <code>TrustMeRNG</code> without look the <code>TrustMeRNG</code> code...</p>
 <p>Such is an violation of Liskov Substitution Principle (LSP), you will see more example later on but let circle back to the Liskov Substitution Principle (LSP), which state that:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span></pre></div></td><td class="code"><div><pre><span></span><code>Let ϕ(x) be a property provable about objects ⁠x of type T. Then ⁠ϕ(y) should be true for objects ⁠y of type S where S is a subtype of T.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Let ϕ(x) be a property provable about objects ⁠x of type T. Then ⁠ϕ(y) should be true for objects ⁠y of type S where S is a subtype of T.
 Mathematically: ${\displaystyle S\leq T\to (\forall x{:}T.\phi (x)\to \forall y{:}S.\phi (y))}$
-``
+</code></pre></div></td></tr></table></div>
+<p>This translate to "If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2 then S is a subtype of T"</p>
+<p>In even simpler word, a subclass should not break the promise of its parent class and that you should be able to 'substitute' a subclass in place of a parent class. In example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Original Class</label><label for="__tabbed_1_2">Substituted Class</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">rng</span> <span class="o">=</span> <span class="n">RNG</span><span class="p">()</span>
 
-This translate to "If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2 then S is a subtype of T"
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rng</span><span class="o">.</span><span class="n">generate_random_integer_from_0_to_100</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-In even simpler word, a subclass should not break the promise of its parent class and that you should be able to 'substitute' a subclass in place of a parent class. In example:
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Took </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> to get 50"</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Here we have a code that count the number of times we need generate to get the number 50.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="n">rng</span> <span class="o">=</span> <span class="n">TrustMeRNG</span><span class="p">()</span>
+</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rng</span><span class="o">.</span><span class="n">generate_random_integer_from_0_to_100</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-=== "Original Class"
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Took </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> to get 50"</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Over here we substituted 'RNG' for 'TrustMeRNG'. If LSP is followed this code should still work as expected and not break. However, in our case since LSP is not followed the above code would be stuck in an infinite loop.</p>
+</div>
+</div>
+</div>
+<h3 id="more-examples">More examples</h3>
+<h4 id="birds">Birds</h4>
+<p>Let use revisit exercise 5. Suppose we wrote this for our <code>Bird</code> class and say birds should be able to fly:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Bird</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">name</span>
 
-    ```python 
-    rng = RNG()
-
-    count = 0
-    while rng.generate_random_integer_from_0_to_100() != 50:
-        count += 1
-
-    print(f"Took {count} to get 50")
-    ```
-
-    Here we have a code that count the number of times we need generate to get the number 50.
-
-
-=== "Substituted Class"
-
-    ```python hl_lines="1"
-    rng = TrustMeRNG()
-
-    count = 0
-    while rng.generate_random_integer_from_0_to_100() != 50:
-        count += 1
-
-    print(f"Took {count} to get 50")
-    ```
-
-    Over here we substituted 'RNG' for 'TrustMeRNG'. If LSP is followed this code should still work as expected and not break. However, in our case since LSP is not followed the above code would be stuck in an infinite loop.
-
-
-### More examples
-
-#### Birds
-
-Let use revisit exercise 5. Suppose we wrote this for our `Bird` class and say birds should be able to fly:
-
-```python
-class Bird:
-    def __init__(self, name: str):
-        self._name: str = name
-
-    def fly(self):
-        print("{self._name} is flying")
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{self._name}</span><span class="s2"> is flying"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Then we recalled that a penguin is also a bird, but it can't fly so we do something like:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -988,6 +975,10 @@ class Bird:
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
