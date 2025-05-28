@@ -825,6 +825,7 @@
 <p>This unit is just for extra reading, it ok if you do not fully understand as these are more complex principles but it is still good to know.</p>
 <h2 id="liskov-substitution-principle">Liskov Substitution Principle</h2>
 <p>Recall when inheriting we can overriding methods to specialize the behavior of our new inherited class. However, this also means it technically possible to completely change the behavior something completely irrelevant that can easily break existing code and introduce bugs.</p>
+<hr>
 <p>Take for example a RNG class that provide you with a random number:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -843,15 +844,15 @@
     <span class="k">def</span> <span class="nf">generate_random_integer_from_0_to_100</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </code></pre></div></td></tr></table></div>
-<p>That a very big problem, the method does not do what it claims to do. First of all it is not random. Secondly, it returns a negative number not within 0-100.</p>
-<p>Now suppose you saw <code>RNG</code> class and saw that <code>TrustMeRNG</code> inherits from <code>RNG</code>. You expect it to behave in the same way as the <code>RNG</code> class and you decided to use <code>TrustMeRNG</code> without look the <code>TrustMeRNG</code> code...</p>
+<p>That a very big problem, the method does not do what it claims to do. First of all it is not random. Secondly, it returns a negative number not within 0-100. Suppose you saw <code>RNG</code> class and saw that <code>TrustMeRNG</code> inherits from <code>RNG</code> and you will expect it to behave in the same way as the <code>RNG</code> class and you decided to use <code>TrustMeRNG</code> without looking the <code>TrustMeRNG</code> code...</p>
 <p>Such is an violation of Liskov Substitution Principle (LSP), you will see more example later on but let circle back to the Liskov Substitution Principle (LSP), which state that:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Let ϕ(x) be a property provable about objects ⁠x of type T. Then ⁠ϕ(y) should be true for objects ⁠y of type S where S is a subtype of T.
-Mathematically: ${\displaystyle S\leq T\to (\forall x{:}T.\phi (x)\to \forall y{:}S.\phi (y))}$
-</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>Let ϕ(x) be a property provable about objects ⁠x of type T. Then ⁠ϕ(y) should be true for objects ⁠y of type S where S is a subtype of T.
+Mathematically: <span class="arithmatex">\({\displaystyle S\leq T\to (\forall x{:}T.\phi (x)\to \forall y{:}S.\phi (y))}\)</span></p>
+</blockquote>
 <p>This translate to "If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2 then S is a subtype of T"</p>
-<p>In even simpler word, a subclass should not break the promise of its parent class and that you should be able to 'substitute' a subclass in place of a parent class. In example:</p>
+<p>In simpler word, a subclass should not break the promise of its parent class and that you should be able to 'substitute' a subclass in place of a parent class.</p>
+<p>For example:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Original Class</label><label for="__tabbed_1_2">Substituted Class</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -890,6 +891,7 @@ Mathematically: ${\displaystyle S\leq T\to (\forall x{:}T.\phi (x)\to \forall y{
 </div>
 </div>
 </div>
+<hr>
 <h3 id="more-examples">More examples</h3>
 <h4 id="birds">Birds</h4>
 <p>Let use revisit exercise 5. Suppose we wrote this for our <code>Bird</code> class and say birds should be able to fly:</p>
