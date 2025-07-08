@@ -5,23 +5,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LCCL coding GitHub Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <h1>Welcome to the lcclcoding github page!</h1>
-    </header>
+<body class="min-vh-100">
+    <div class="container-fluid pb-5">
+        <header class="py-4 mb-4">
+            <div class="container">
+                <h1 class="display-4 text-center">Welcome to the lcclcoding GitHub page!</h1>
+            </div>
+        </header>
 
-    <main>
-        <p>For more information on classes please visit: <a href="https://lcclcoding.com">lcclcoding.com</a></p>
-        <p>Material for the course are hosted on this page. Material for PY2 OOP are moved <a href="/PY2/OOP/">here</a>
-        </p>
-    </main>
+        <main class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p class="lead">
+                                For more information on classes please visit:
+                                <a href="https://lcclcoding.com"
+                                    class="btn btn-outline-primary btn-sm">lcclcoding.com</a>
+                            </p>
+                            <p class="mb-0">
+                                Material for the course are hosted on this url. Material for PY2 OOP are moved
+                                <a href="/PY2/OOP/" class="btn btn-outline-secondary btn-sm">here</a>
+                            </p>
 
-    <footer>
-        <p>&copy; lcclcoding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 fixed-bottom">
+        <div class="container">
+            <p class="mb-0">&copy; LCCL Coding Academy</p>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
