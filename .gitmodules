@@ -1,0 +1,3 @@
+[submodule "PY1/spritesheet"]
+	path = PY1/spritesheet
+	url = https://github.com/lcclcoding/PY1-LPC-Spritesheet.git
