@@ -431,18 +431,18 @@
 <li><code>get_wind()</code> → Returns a dictionary with <code>speed</code> (low/high) and <code>direction</code></li>
 <li><code>get_valid_period()</code> → Returns the period the forecast is valid for</li>
 </ul>
-<p>Each function should calls the <code>get_general(field)</code> helper.</p>
+<p>Each function should calls the <code>get_general('field')</code> helper.</p>
 <h3 id="task-5-reformatting-information">Task 5: Reformatting Information</h3>
 <p>In the raw API response contains the forecast for multiple regions, but it’s not organized per region. Instead, it's grouped by time period, and within each period, it gives the forecast for all regions. This format is not directly useful to our use case and so we want to process it and return the data in a different way.</p>
 <p>Extract the <strong>regional weather forecasts</strong> from the API response with a function that:</p>
 <ul>
 <li>Take in a <code>region</code> (e.g., <code>'north'</code>, <code>'south'</code>, <code>'east'</code>, <code>'west'</code>, or <code>'central'</code>)</li>
-<li>Return <strong>two lists</strong>:</li>
-<li>A list of <code>timePeriod</code> dictionaries</li>
-<li>A list of corresponding weather <code>forecast</code> dictionaries (for that region)</li>
+<li>Return a list of tuples that contains:</li>
+<li><code>timePeriod</code> dictionaries</li>
+<li><code>forecast</code> dictionaries</li>
 </ul>
 <h3 id="task-6-main">Task 6: Main</h3>
-<p>Complete the <code>main.py</code> and provide a way for users to get their forecast for their region.</p>
+<p>Complete the <code>weather.py</code> and provide a way for users to get their forecast for their region.</p>
 <p>Sample output:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
